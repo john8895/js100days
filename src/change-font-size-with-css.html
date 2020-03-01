@@ -3,17 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            padding: 10px;
-        }
-
         .box1 {
             border: 1px solid #ddd;
             padding: 20px;
@@ -24,20 +16,16 @@
             transition: .5s ease-in-out;
         }
 
-        h2 {
-            margin-bottom: 10px;
-        }
         #fontSizeLarge:checked ~ .fontDv {
-            font-size: 52px;
+            font-size: 32px;
             line-height: 2;
-            font-family: "Microsoft JhengHei";
             color: darkcyan;
         }
 
         #fontSizeSmall:checked ~ .fontDv {
             font-size: 12px;
             line-height: 1.2;
-            color: deeppink;
+            color: darkred;
         }
 
         [id^="fontSize"] {
@@ -57,6 +45,7 @@
     </style>
 </head>
 <body>
+<button class="gobackBtn" onclick="window.history.back()">回上一頁</button>
 <h2>純CSS更改文字大小</h2>
 <div class="box1">
     <label for="fontSizeLarge" class="fontChangeBut">A+</label>

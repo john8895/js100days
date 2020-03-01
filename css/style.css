@@ -1,0 +1,45 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: "Microsoft JhengHei";
+}
+
+body {
+  padding: 10px;
+}
+
+.gobackBtn {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: 1px solid #000;
+  padding: 10px 13px;
+}
+.gobackBtn:before {
+  content: "";
+  margin-right: 5px;
+}
+
+a {
+  color: #0366d6;
+}
+a:link {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.portfolio-list li {
+  line-height: 1.8;
+}
+
+/*# sourceMappingURL=style.css.map */
