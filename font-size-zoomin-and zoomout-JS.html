@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 10px;
+        }
+
+        .box1 {
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        .fontDv {
+            margin-top: 20px;
+            line-height: 1.7;
+            transition: .5s ease-in-out;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .box1 [id^="fontSize"] {
+            border: 1px solid #000;
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: #fff;
+            transition: .3s ease;
+            margin-right: 5px;
+        }
+
+        .box1 [id^="fontSize"]:hover {
+            background-color: black;
+            color: white;
+        }
+
+        #nowFontSize {
+            color: red;
+            font-family: "Arial Black";
+        }
+    </style>
+</head>
+<body>
+<h2>JS 更改文字大小</h2>
+<div class="box1">
+    <input type="button" value="A+" id="fontSizeLarge">
+    <input type="button" value="A-" id="fontSizeSmall">
+    <input type="button" value="Default" id="fontSizeDefault">
+    <span>目前文字字級為 <span id="nowFontSize">16px</span></span>
+    <div class="fontDv" id="fontDv">
+        <p>
+            新冠肺炎（COVID-19）疫情在韓國大爆發，截至今（1日）上午境內已超過3150人確診，17人死亡。其中一名病例是南韓女公務員，人員初步分析，可能的感染源、接觸史是住在同棟公寓且確診的鄰居，2人曾乘坐同一台電梯大約一分鐘。
+        </p>
+        綜合韓媒報導，首爾一名在城東區公所工作的41歲女公務員，在沒有配戴口罩的狀況下，與同樣也沒戴口罩的確診者乘坐同台電梯，過程中由於適逢新冠肺炎疫情期間，2人完全沒有開口說話、零互動，且時間大約只有短短一分鐘，沒想到之後竟出現症狀，送醫採檢結果呈現陽性。
+        <p>
+            當時女子身後還有2名孩子，有戴口罩，檢疫後結果為陰性。政府部門進行調查，過濾與女子相關接觸者，發現搭乘同電梯的男子為明成教會牧師，16日曾出席約有2000人參與的禮拜，並於25日確診，因此不排除為電梯內感染的首例。為避免疫情再度擴散，女公務員的30名同事已被隔離，相關辦事處也關閉，進行消毒。
+        </p>
+        <p>
+            大韓醫學會主席崔在旭（Chae-Wook
+            Choi）指出，電梯屬狹窄密閉空間，病毒可能透過細小飛沫或者殘留在按鈕上感染其他人。專家也強調，就算是短時間，在密切接觸的電梯內以及出門，都必須戴口罩，並且經常洗手30秒以上。
+        </p>
+    </div>
+</div>
+<script>
+    let fontLarge = document.getElementById('fontSizeLarge');
+    let fontSmall = document.getElementById('fontSizeSmall');
+    let fontDv = document.getElementById('fontDv');
+    let fontDefault = document.getElementById('fontSizeDefault');
+    let displayFont = document.getElementById('nowFontSize');
+
+    fontLarge.onclick = () => {
+        let str = fontDv.style.fontSize || "16px";
+        if (str) {
+            let num = str.indexOf("p");
+            str = str.substring(0, num);
+        }
+        console.log(str);
+        str++;
+        fontDv.style.fontSize = str + "px";
+        displayFont.innerText = str + "px";
+    }
+    fontSmall.onclick = () => {
+        let str2 = fontDv.style.fontSize || "16px";
+        if (str2) {
+            let num = str2.indexOf("p");
+            str2 = str2.substring(0, num);
+        }
+        console.log(str2);
+        str2--;
+        fontDv.style.fontSize = str2 + "px";
+        displayFont.innerText = str2 + "px";
+    }
+    fontDefault.onclick = () => {
+
+        if (fontDv.style.fontSize !== "") {
+            fontDv.setAttribute('style', "");
+            displayFont.innerText = "16px";
+        } else {
+            // 尚未調整字型大小
+            fontLarge.animate([
+                {backgroundColor: "#ffffff"},
+                {backgroundColor: "red"}
+            ], {
+                duration: 1000
+            });
+            fontSmall.animate([
+                {backgroundColor: "#ffffff"},
+                {backgroundColor: "red"}
+            ], {
+                delay: 1000,
+                duration: 1000
+            });
+        }
+    }
+
+</script>
+
+</body>
+</html>
