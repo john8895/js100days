@@ -48,7 +48,7 @@
         let cMonths = months[today.getMonth()];
         let cDate = today.getDate();
         let cDay = weeks[today.getDay()];
-        let cMer = today.getHours() < 2; //AM:true  PM:false
+        let cMer = today.getHours() < 12; //AM:true  PM:false
         let cBody = document.getElementById('clockBody');
 
         cBody.getElementsByTagName('header')[0].innerHTML = `
