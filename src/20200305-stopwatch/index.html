@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .dv {
+            background-image: url(img/bg.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 800px;
+            height: 700px;
+            position: relative;
+        }
+        .watch-wrap {
+            background-color: rgba(204, 204, 204, 0.62);
+            width: 185px;
+            height: 70px;
+            position: absolute;
+            top: 215px;
+            left: 267px;
+            transform: rotate(-16deg);
+            border-radius: 8px;
+        }
+        .watch-body {
+            top: 16px;
+            position: absolute;
+            font-size: 50px;
+            left: 25px;
+            font-family: sans-serif;
+        }
+        #ms {
+
+        }
+    </style>
+</head>
+<body>
+<div id="dv" class="dv">
+    <div class="watch-wrap">
+        <div class="watch-body">
+            <span id="minute">00</span><span id="second">00</span><span id="ms">00</span>
+            <br/>
+        </div>
+
+        <button class="start" id="start" onclick="start();">start</button>
+        <button class="stop" id="stop" onclick="stop();">stop</button>
+    </div>
+</div>
+<script>
+    let timer = 0;
+    let Interval;
+    let minute = document.getElementById('minute');
+    let second = document.getElementById('second');
+    let ms = document.getElementById('ms');
+
+    function start() {
+        Interval = setInterval(function () {
+            timer += 1 / 60;
+            let msVal = Math.floor((timer - Math.floor(timer)) * 100);
+            ms.innerHTML = msVal < 10 ? "0" + msVal.toString() : msVal;
+
+            let secondVal = Math.floor(timer) - Math.floor(timer / 60) * 60;
+            second.innerHTML = secondVal < 10 ? "0"+secondVal.toString() : secondVal;
+
+            let minuteVal = Math.floor(timer / 60);
+            minute.innerHTML = minuteVal < 10 ? "0"+minuteVal.toString() : minuteVal;
+
+        }, 1000 / 60)
+    }
+
+    function stop() {
+        clearInterval(Interval);
+    }
+</script>
+</body>
+</html>
