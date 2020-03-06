@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        @font-face {
+            font-family: led;
+            src: url(fonts/7led.ttf),
+                url(fonts/7led.woff);
+        }
+
         .dv {
             background-image: url(img/bg.jpg);
             background-size: contain;
@@ -23,14 +29,51 @@
             border-radius: 8px;
         }
         .watch-body {
-            top: 16px;
+            top: 25px;
             position: absolute;
-            font-size: 50px;
-            left: 25px;
-            font-family: sans-serif;
+            font-size: 43px;
+            left: 29px;
+            font-family: led;
+            width: 155px;
         }
         #ms {
-
+            font-size: 33px;
+        }
+        .watch-body div {
+            position: absolute;
+        }
+        .watch-body div:nth-of-type(1) {
+            left: 0;
+            top: 0;
+        }
+        .watch-body div:nth-of-type(2) {
+            top: 0;
+            left: 53px;
+        }
+        .watch-body div:nth-of-type(3) {
+            right: 11px;
+            top: 10px;
+        }
+        .startBtn,.stopBtn {
+            position: absolute;
+        }
+        .startBtn {
+            top: -88px;
+            right: -53px;
+            width: 99px;
+            height: 54px;
+            transform: rotate(44deg);
+            border: 0;
+            background-color: rgba(204, 204, 204, 0.6);
+        }
+        .stopBtn {
+            top: -88px;
+            left: -53px;
+            width: 99px;
+            height: 54px;
+            transform: rotate(-44deg);
+            border: 0;
+            background-color: rgba(204, 204, 204, 0.6);
         }
     </style>
 </head>
@@ -38,12 +81,12 @@
 <div id="dv" class="dv">
     <div class="watch-wrap">
         <div class="watch-body">
-            <span id="minute">00</span><span id="second">00</span><span id="ms">00</span>
+            <div id="minute">00</div><div id="second">00</div><div id="ms">00</div>
             <br/>
         </div>
 
-        <button class="start" id="start" onclick="start();">start</button>
-        <button class="stop" id="stop" onclick="stop();">stop</button>
+        <button class="startBtn" id="start" onclick="start();">start</button>
+        <button class="stopBtn" id="stop" onclick="stop();">stop</button>
     </div>
 </div>
 <script>
