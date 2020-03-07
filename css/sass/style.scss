@@ -1,12 +1,12 @@
 @import "mixins";
-
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 * {
-  font-family: "Microsoft JhengHei";
+  //font-family: "Microsoft JhengHei";
 }
 
-body {
-  padding: 10px;
-}
+//body {
+//  padding: 10px;
+//}
 
 .gobackBtn {
   @include btn;

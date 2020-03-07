@@ -2,93 +2,146 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>STOPWATCH</title>
+    <link rel="stylesheet" href="../../css/style.css">
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+        }
+
         @font-face {
-            font-family: led;
-            src: url(fonts/7led.ttf),
-                url(fonts/7led.woff);
+            font-family: digital_dismay;
+            src: url(fonts/digital_dismay.otf),
+            url(fonts/digital_dismay.ttf),
+            url(fonts/digital_dismay.eot);
         }
 
         .dv {
-            background-image: url(img/bg.jpg);
+            background-image: url(img/bg4.jpg);
             background-size: contain;
             background-repeat: no-repeat;
             width: 800px;
             height: 700px;
             position: relative;
         }
+
         .watch-wrap {
-            background-color: rgba(204, 204, 204, 0.62);
+            /*background-color: rgba(204, 204, 204, 0.62); */
             width: 185px;
             height: 70px;
             position: absolute;
-            top: 215px;
-            left: 267px;
+            top: 216px;
+            left: 215px;
             transform: rotate(-16deg);
             border-radius: 8px;
+            color: #363636;
+
         }
-        .watch-body {
-            top: 25px;
+
+        .watch-text {
+            font-family: sans-serif;
+            font-size: 14px;
+            font-weight: bold;
             position: absolute;
-            font-size: 43px;
-            left: 29px;
-            font-family: led;
-            width: 155px;
+            top: 5px;
+            left: 7px;
+            letter-spacing: -0.85px;
+            text-transform: uppercase;
         }
-        #ms {
-            font-size: 33px;
+
+        .watch-body {
+            top: 14px;
+            position: absolute;
+            font-size: 57px;
+            left: 20px;
+            font-family: "digital_dismay", sans-serif;
+            width: 161px;
         }
+
         .watch-body div {
             position: absolute;
         }
+
         .watch-body div:nth-of-type(1) {
             left: 0;
             top: 0;
         }
+
         .watch-body div:nth-of-type(2) {
             top: 0;
-            left: 53px;
+            left: 66px;
         }
+
         .watch-body div:nth-of-type(3) {
-            right: 11px;
+            font-size: 43px;
+            right: 4px;
             top: 10px;
         }
-        .startBtn,.stopBtn {
+
+        .startBtn, .stopBtn, .modeBtn {
             position: absolute;
+            /*background-color: rgba(204, 204, 204, 0.6);*/
+            background: transparent;
+            color: transparent;
+            border: 0;
+            height: 54px;
+            width: 99px;
+            outline: none;
         }
+
         .startBtn {
             top: -88px;
             right: -53px;
-            width: 99px;
-            height: 54px;
             transform: rotate(44deg);
-            border: 0;
-            background-color: rgba(204, 204, 204, 0.6);
         }
+
         .stopBtn {
             top: -88px;
             left: -53px;
-            width: 99px;
-            height: 54px;
             transform: rotate(-44deg);
-            border: 0;
-            background-color: rgba(204, 204, 204, 0.6);
+        }
+
+        .modeBtn {
+            top: -120px;
+            left: 53px;
+            transform: rotate(0deg);
+            width: 76px;
+        }
+
+        .sp {
+            margin-left: -5px;
+        }
+        .readme {
+            color: #fff;
         }
     </style>
 </head>
 <body>
+<div class="readme">
+    Please press START to start counter
+</div>
+
 <div id="dv" class="dv">
     <div class="watch-wrap">
+        <div class="watch-text" id="watchText">
+            SU MO TU WE TH FR SA
+        </div>
         <div class="watch-body">
-            <div id="minute">00</div><div id="second">00</div><div id="ms">00</div>
+            <div id="minute">00<span class="sp">:</span></div>
+            <div id="second">00</div>
+            <div id="ms">00</div>
             <br/>
         </div>
 
-        <button class="startBtn" id="start" onclick="start();">start</button>
-        <button class="stopBtn" id="stop" onclick="stop();">stop</button>
+        <button class="startBtn" id="start" onclick="startAndStop();">start</button>
+        <button class="stopBtn" id="reset" onclick="reset();">reset</button>
+        <button class="modeBtn" id="modeBtn" onclick="mode();">mode</button>
     </div>
 </div>
+<br>
+<button class="gobackBtn" onclick="window.history.back()">回上一頁</button>
 <script>
     let timer = 0;
     let Interval;
@@ -96,23 +149,40 @@
     let second = document.getElementById('second');
     let ms = document.getElementById('ms');
 
-    function start() {
-        Interval = setInterval(function () {
-            timer += 1 / 60;
-            let msVal = Math.floor((timer - Math.floor(timer)) * 100);
-            ms.innerHTML = msVal < 10 ? "0" + msVal.toString() : msVal;
+    function startAndStop() {
+        //STOP
+        if (typeof Interval !== "undefined" && timer !== 0) {
+            clearInterval(Interval);
+            watchText.innerText = "stop";
+        } else {
+            //START
+            watchText.innerText = "start";
+            Interval = setInterval(function () {
+                timer += 1 / 60;
+                let msVal = Math.floor((timer - Math.floor(timer)) * 100);
+                ms.innerHTML = msVal < 10 ? "0" + msVal.toString() : msVal;
 
-            let secondVal = Math.floor(timer) - Math.floor(timer / 60) * 60;
-            second.innerHTML = secondVal < 10 ? "0"+secondVal.toString() : secondVal;
+                let secondVal = Math.floor(timer) - Math.floor(timer / 60) * 60;
+                second.innerHTML = secondVal < 10 ? "0" + secondVal.toString() : secondVal;
 
-            let minuteVal = Math.floor(timer / 60);
-            minute.innerHTML = minuteVal < 10 ? "0"+minuteVal.toString() : minuteVal;
+                let minuteVal = Math.floor(timer / 60);
+                minute.innerHTML = minuteVal < 10 ? "0" + minuteVal.toString() + "<span class='sp'>:</span>" : minuteVal + ":";
 
-        }, 1000 / 60)
+            }, 1000 / 60)
+        }
     }
 
-    function stop() {
+    function reset() {
         clearInterval(Interval);
+        timer = 0;
+        ms.innerHTML = "00";
+        second.innerHTML = "00";
+        minute.innerHTML = "00<span class='sp'>:</span>";
+        watchText.innerText = "reset";
+    }
+
+    function mode() {
+        watchText.innerText = "mode is not effect";
     }
 </script>
 </body>
