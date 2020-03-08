@@ -1,13 +1,5 @@
 @import "mixins";
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
-* {
-  //font-family: "Microsoft JhengHei";
-}
-
-//body {
-//  padding: 10px;
-//}
-
 .gobackBtn {
   @include btn;
   border: 1px solid #000;
@@ -33,4 +25,12 @@ a {
   li {
     line-height: 1.8;
   }
+}
+
+pre {
+  border: 1px solid #1d1d1d;
+  background-color: #2B2B2B;
+  color: #BABABA;
+  padding: 10px;
+  border-left: 8px solid #ccc;
 }

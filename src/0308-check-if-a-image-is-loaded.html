@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制網頁元素誰先載入（顯示）相容IE</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        * {
+            font-family: "Microsoft JhengHei";
+        }
+
+        .dv {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .text {
+            position: absolute;
+            top: 45px;
+            right: 50px;
+            background-color: #fff;
+            height: 200px;
+            width: 400px;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<p>程式目的：判斷圖片img是否載入完畢，載入完畢才顯示文字方塊</p>
+<div class="dv">
+    <img id="img"
+         src="https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+         alt="">
+    <div class="text" id="textBlock">
+        <h4>我是一段文字</h4>
+        <p>我是第二段文字</p>
+    </div>
+</div>
+<h1 id="showText"></h1>
+<hr>
+code:
+<pre>
+    let img = document.getElementById('img');
+    onload = function () {
+        if (img && img.complete) {
+            let showText = document.getElementById('showText');
+            //圖片載入完畢
+            var num = 3;
+            showText.textContent = "圖片已載入完畢，" + num + " 秒後顯示文字框";
+
+            var timeId = setInterval(function () {
+                num--;
+                showText.textContent = "圖片載入完畢，" + num + " 秒後顯示文字框";
+
+                if (num === 0) {
+                    clearInterval(timeId);
+                    showText.innerText = "圖片已載入完畢，文字框已顯示";
+                    let textBlock = document.getElementById('textBlock');
+                    textBlock.style.opacity = "1";
+                }
+            }, 1000);
+        }
+    }
+</pre>
+<br>
+<button class="gobackBtn" onclick="window.history.back()">回上一頁</button>
+<script>
+    let img = document.getElementById('img');
+    onload = function () {
+        if (img && img.complete) {
+            let showText = document.getElementById('showText');
+            //圖片載入完畢
+            var num = 3;
+            showText.textContent = "圖片已載入完畢，" + num + " 秒後顯示文字框";
+
+            var timeId = setInterval(function () {
+                num--;
+                showText.textContent = "圖片載入完畢，" + num + " 秒後顯示文字框";
+
+                if (num === 0) {
+                    clearInterval(timeId);
+                    showText.innerText = "圖片已載入完畢，文字框已顯示";
+                    let textBlock = document.getElementById('textBlock');
+                    textBlock.style.opacity = "1";
+                }
+            }, 1000);
+        }
+    }
+
+</script>
+</body>
+</html>

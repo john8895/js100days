@@ -43,7 +43,6 @@
     </style>
 </head>
 <body>
-<button class="gobackBtn" onclick="window.history.back()">回上一頁</button>
 <h2>JS 更改文字大小</h2>
 <div class="box1">
     <input type="button" value="A+" id="fontSizeLarge">
@@ -64,6 +63,63 @@
         </p>
     </div>
 </div>
+<hr>
+code:
+<pre>
+    let fontLarge = document.getElementById('fontSizeLarge');
+    let fontSmall = document.getElementById('fontSizeSmall');
+    let fontDv = document.getElementById('fontDv');
+    let fontDefault = document.getElementById('fontSizeDefault');
+    let displayFont = document.getElementById('nowFontSize');
+
+    fontLarge.onclick = () => {
+        let str = fontDv.style.fontSize || "16px";
+        if (str) {
+            let num = str.indexOf("p");
+            str = str.substring(0, num);
+        }
+        console.log(str);
+        str++;
+        fontDv.style.fontSize = str + "px";
+        displayFont.innerText = str + "px";
+    }
+    fontSmall.onclick = () => {
+        let str2 = fontDv.style.fontSize || "16px";
+        if (str2) {
+            let num = str2.indexOf("p");
+            str2 = str2.substring(0, num);
+        }
+        console.log(str2);
+        str2--;
+        fontDv.style.fontSize = str2 + "px";
+        displayFont.innerText = str2 + "px";
+    }
+    fontDefault.onclick = () => {
+
+        if (fontDv.style.fontSize !== "") {
+            fontDv.setAttribute('style', "");
+            displayFont.innerText = "16px";
+        } else {
+            // 尚未調整字型大小
+            fontLarge.animate([
+                {backgroundColor: "#ffffff"},
+                {backgroundColor: "red"}
+            ], {
+                duration: 1000
+            });
+            fontSmall.animate([
+                {backgroundColor: "#ffffff"},
+                {backgroundColor: "red"}
+            ], {
+                delay: 1000,
+                duration: 1000
+            });
+        }
+    }
+</pre>
+<br>
+<button class="gobackBtn" onclick="window.history.back()">回上一頁</button>
+
 <script>
     let fontLarge = document.getElementById('fontSizeLarge');
     let fontSmall = document.getElementById('fontSizeSmall');
