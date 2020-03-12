@@ -1,0 +1,88 @@
+$first-color: #84cd4e;
+$second-color: #44B549;
+
+ul {
+  list-style-type: none;
+}
+//search
+.searchBtn,
+.search-overlay-menu .search-overlay-close {
+  cursor: pointer;
+}
+.searchBtn {
+  i {
+    font-size: 48px;
+  }
+}
+.search-overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: transform .3s ease 0s, opacity .3s ease 0s, visibility 0s ease .3s, -webkit-transform .3s ease 0s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 3400;
+  text-align: center;
+
+  &:before {
+    content: '';
+    height: 50%;
+    display: inline-block;
+    vertical-align: middle;
+
+  }
+
+  .searchform {
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    position: relative;
+
+    input[type=search] {
+      border: 1px solid #ddd;
+      width: 100%;
+      padding: 1rem 2rem;
+      font-size: 19px;
+    }
+    button[type=submit] {
+      position: absolute;
+      left: 0;
+      top: 56px;
+      padding: 4px 15px;
+      font-size: 23px;
+      background-color: $second-color;
+      border: 0;
+      color: #fff;
+      &:hover {
+        background-color: darken($second-color,10%);
+      }
+    }
+  }
+}
+
+.search-overlay-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .3s ease 0s, transform .3s ease 0s, -webkit-transform .3s ease 0s;
+}
+
+.search-overlay-menu .search-overlay-close {
+  position: absolute;
+  top: -30px;
+  right: 10px;
+  opacity: 1;
+  z-index: 100;
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  display: inline-block;
+  line-height: 1;
+  transition: all 0.3s ease 0s;
+  color: #ffffff;
+  &:hover {
+    color: $second-color;
+  }
+}

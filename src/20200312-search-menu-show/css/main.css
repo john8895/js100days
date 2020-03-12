@@ -1,0 +1,83 @@
+ul {
+  list-style-type: none;
+}
+
+.searchBtn,
+.search-overlay-menu .search-overlay-close {
+  cursor: pointer;
+}
+
+.searchBtn i {
+  font-size: 48px;
+}
+
+.search-overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease 0s, opacity 0.3s ease 0s, visibility 0s ease 0.3s, -webkit-transform 0.3s ease 0s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 3400;
+  text-align: center;
+}
+.search-overlay-menu:before {
+  content: "";
+  height: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.search-overlay-menu .searchform {
+  width: 100%;
+  max-width: 350px;
+  margin: auto;
+  position: relative;
+}
+.search-overlay-menu .searchform input[type=search] {
+  border: 1px solid #ddd;
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 19px;
+}
+.search-overlay-menu .searchform button[type=submit] {
+  position: absolute;
+  left: 0;
+  top: 56px;
+  padding: 4px 15px;
+  font-size: 23px;
+  background-color: #44B549;
+  border: 0;
+  color: #fff;
+}
+.search-overlay-menu .searchform button[type=submit]:hover {
+  background-color: #36903a;
+}
+
+.search-overlay-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease 0s, transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+}
+
+.search-overlay-menu .search-overlay-close {
+  position: absolute;
+  top: -30px;
+  right: 10px;
+  opacity: 1;
+  z-index: 100;
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  display: inline-block;
+  line-height: 1;
+  transition: all 0.3s ease 0s;
+  color: #ffffff;
+}
+.search-overlay-menu .search-overlay-close:hover {
+  color: #44B549;
+}
+
+/*# sourceMappingURL=main.css.map */

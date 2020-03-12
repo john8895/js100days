@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2020.03.12 彈出式搜尋框</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script type="text/javascript" src="all.js"></script>
+  </head>
+  <body>
+    <h2>彈出式搜尋框</h2>
+    <p>以原生 JS 控制，開啟搜尋框後，點選 input、button 以外的地方，會自動關閉搜尋框。</p>
+    <hr>
+    <section class="search-overlay-menu" id="search-overlay-menu">
+      <div class="container">
+        <form class="searchform" id="searchform" role="search" action="" method="get"><a class="search-overlay-close" id="search-overlay-close"><i class="fa fa-times" aria-hidden="true"></i></a>
+          <input value="" name="q" type="search" placeholder="Search..."><br>
+          <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </section>
+    <ul>
+      <li class="search-tool" id="search-overlay-menu-btn"><a class="searchBtn" id="searchBtn" title=""><i class="fa fa-search" aria-hidden="true"></i></a></li>
+    </ul>
+    <hr>
+    <pre>window.onload = function () {
+    var searchBtn = document.getElementById('searchBtn');
+    var overlay = document.getElementById('search-overlay-menu')
+    var closeBtn = document.getElementById('search-overlay-close')
+
+    searchBtn.onclick = function (e) {
+        e.preventDefault();
+        overlay.classList.add('open');
+    }
+    closeBtn.onclick = function (e) {
+        e.preventDefault();
+        overlay.classList.remove('open');
+    }
+    overlay.onclick = function (e) {
+        if (e.target.nodeName === "INPUT" || e.target.nodeName === "BUTTON") {
+            return;
+        }
+        if (e.target.nodeName !== "INPUT" || e.target.nodeName !== "BUTTON") {
+            overlay.classList.remove('open');
+        }
+    }
+}</pre><br>
+<button class="gobackBtn" onclick="window.history.back()">回上一頁</button>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+doctype html
+html(lang='zh-Hant')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title 彈出式搜尋框
+        link(rel='stylesheet', href='../../css/style.css')
+        link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css')
+        link(rel='stylesheet', type='text/css', href='./css/main.css')
+        script(type='text/javascript', src='all.js')
+    body
+        h2
+            | 彈出式搜尋框
+        p.
+            以原生 JS 控制，開啟搜尋框後，點選 input、button 以外的地方，會自動關閉搜尋框。
+        hr
+        section.search-overlay-menu#search-overlay-menu
+            .container
+                form#searchform.searchform(role='search', action='', method='get')
+                    a.search-overlay-close#search-overlay-close
+                        i.fa.fa-times(aria-hidden='true')
+                    input(value='', name='q', type='search', placeholder='Search...')
+                    br
+                    button(type='submit')
+                        i.fa.fa-search(aria-hidden='true')
+        ul
+            li#search-overlay-menu-btn.search-tool
+                a.searchBtn#searchBtn(title="")
+                    i.fa.fa-search(aria-hidden='true')
+        hr
+        pre.
+            window.onload = function () {
+                var searchBtn = document.getElementById('searchBtn');
+                var overlay = document.getElementById('search-overlay-menu')
+                var closeBtn = document.getElementById('search-overlay-close')
+
+                searchBtn.onclick = function (e) {
+                    e.preventDefault();
+                    overlay.classList.add('open');
+                }
+                closeBtn.onclick = function (e) {
+                    e.preventDefault();
+                    overlay.classList.remove('open');
+                }
+                overlay.onclick = function (e) {
+                    if (e.target.nodeName === "INPUT" || e.target.nodeName === "BUTTON") {
+                        return;
+                    }
+                    if (e.target.nodeName !== "INPUT" || e.target.nodeName !== "BUTTON") {
+                        overlay.classList.remove('open');
+                    }
+                }
+            }
+        <br>
+        <button class="gobackBtn" onclick="window.history.back()">回上一頁</button>
