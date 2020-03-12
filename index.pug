@@ -3,28 +3,34 @@ html(lang='en')
     head
         include _head
     body
-        h1 我的 JS 100 天挑戰
-        ul.portfolio-list
-            li
-                | 2020.03.02：調整文字大小：
-                a(href='src/change-font-size-with-css.html', title='change-font-size') 純 CSS
-                | 以及用
-                a(href='src/change-font-size-with-js.html') JS
-            li
-                | 2020.03.03：
-                a(href='src/papapig-moveing.html', title='和佩佩豬一起動一動') 和佩佩豬一起動一動
-            li
-                | 2020.03.04：
-                a(href='src/20200304-clock/0303-eazy-clock.html', title='時鐘') 時鐘
-            li
-                | 2020.03.07：
-                a(href='src/20200305-stopwatch/index.html', title='仿真碼表 stopwatch') 仿真碼表 stopwatch
-            li
-                | 2020.03.08：
-                a(href='src/0308-check-if-a-image-is-loaded.html') 控制網頁元素誰先載入-判斷圖片載入完成(相容IE)
-            li
-                | 2020.03.08：
-                a(href='src/0308-check-if-a-background-image-is-loaded.html') 控制網頁元素誰先載入-判斷背景圖片載入完成(相容IE)
-            li
-                | 2020.03.12：
-                a(href="",title="")
+        header
+            include _header
+        main
+            h1 我的 JS 100 天挑戰
+            ul.portfolio-list
+                li
+                    | 2020.03.02：調整文字大小：
+                    a(href='src/change-font-size-with-css.html', title='change-font-size') 純 CSS
+                    | 以及用
+                    a(href='src/change-font-size-with-js.html') JS
+                li
+                    | 2020.03.03：
+                    a(href='src/papapig-moveing.html', title='和佩佩豬一起動一動') 和佩佩豬一起動一動
+                li
+                    | 2020.03.04：
+                    a(href='src/20200304-clock/0303-eazy-clock.html', title='時鐘') 時鐘
+                li
+                    | 2020.03.07：
+                    a(href='src/20200305-stopwatch/index.html', title='仿真碼表 stopwatch') 仿真碼表 stopwatch
+                li
+                    | 2020.03.08：
+                    a(href='src/0308-check-if-a-image-is-loaded.html') 控制網頁元素誰先載入-判斷圖片載入完成(相容IE)
+                li
+                    | 2020.03.08：
+                    a(href='src/0308-check-if-a-background-image-is-loaded.html') 控制網頁元素誰先載入-判斷背景圖片載入完成(相容IE)
+                li
+                    | 2020.03.12：
+                    a(href="src/20200312-search-menu-show.html",title="彈出式搜尋框") JS 彈出式搜尋框
+        footer
+            include _footer
+        include _js
