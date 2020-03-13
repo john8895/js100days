@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html(lang='zh-Hant')
     head
         meta(charset='UTF-8')
         title 動態顯示搜尋框
@@ -25,7 +25,21 @@ html(lang='en')
                         name='keyword', placeholder='請輸入文字')
                     a#header__searchBtn(href='')
                         i.fa.fa-search(aria-hidden='true')
-        button.gobackBtn(onclick='window.history.back()') 回上一頁
+            hr
+            pre.
+                searchBarToggle();
+                    function searchBarToggle() {
+                        let sBtn = document.getElementById('header__searchBtn');
+                        let sInput = document.getElementById('header__searchInput');
+                        if (sBtn) {
+                            sBtn.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                sInput.classList.contains('focus') ? sInput.classList.remove('focus') : sInput.classList.add('focus');
+                            })
+                        }
+                    }
+            br
+            button.gobackBtn(onclick='window.history.back()') 回上一頁
 
 
 script.

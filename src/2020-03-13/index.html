@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
   <head>
     <meta charset="UTF-8">
     <title>動態顯示搜尋框</title>
@@ -25,8 +25,20 @@
           <input class="input-medium search-query inputSearchStyle addsearch" id="header__searchInput" type="text" name="keyword" placeholder="請輸入文字"><a id="header__searchBtn" href=""><i class="fa fa-search" aria-hidden="true"></i></a>
         </form>
       </div>
+      <hr>
+      <pre>searchBarToggle();
+    function searchBarToggle() {
+        let sBtn = document.getElementById('header__searchBtn');
+        let sInput = document.getElementById('header__searchInput');
+        if (sBtn) {
+            sBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                sInput.classList.contains('focus') ? sInput.classList.remove('focus') : sInput.classList.add('focus');
+            })
+        }
+    }</pre><br>
+      <button class="gobackBtn" onclick="window.history.back()">回上一頁</button>
     </div>
-    <button class="gobackBtn" onclick="window.history.back()">回上一頁</button>
   </body>
 </html>
 <script>
