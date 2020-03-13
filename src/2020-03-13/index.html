@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>動態顯示搜尋框</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../css/style.css">
+  </head>
+  <body>
+    <div class="body-wrap">
+      <h2>純 CSS 動態顯示搜尋框</h2>
+      <div class="dv">
+        <div class="search-bar">
+          <input class="btn" id="btn" type="checkbox" name="">
+          <label class="btnLabel" for="btn"><i class="fa fa-search"></i></label>
+          <label class="btn2Label" for="btn2"><i class="fa fa-search"></i></label>
+          <input class="btn2" id="btn2" type="checkbox" name="">
+          <input class="ip" type="text" placeholder="請輸入文字">
+        </div>
+      </div>
+      <hr>
+      <h2>JS 動態顯示搜尋框</h2>
+      <div class="header__search-wrapper">
+        <form class="header__search form-search pull-right" role="form" method="GET" action="">
+          <input class="input-medium search-query inputSearchStyle addsearch" id="header__searchInput" type="text" name="keyword" placeholder="請輸入文字"><a id="header__searchBtn" href=""><i class="fa fa-search" aria-hidden="true"></i></a>
+        </form>
+      </div>
+    </div>
+    <button class="gobackBtn" onclick="window.history.back()">回上一頁</button>
+  </body>
+</html>
+<script>
+  searchBarToggle();
+  function searchBarToggle() {
+      let sBtn = document.getElementById('header__searchBtn');
+      let sInput = document.getElementById('header__searchInput');
+      if (sBtn) {
+          sBtn.addEventListener('click', function (e) {
+              e.preventDefault();
+              sInput.classList.contains('focus') ? sInput.classList.remove('focus') : sInput.classList.add('focus');
+          })
+      }
+  }
+</script>

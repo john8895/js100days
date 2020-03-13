@@ -1,0 +1,43 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title 動態顯示搜尋框
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(rel='stylesheet', href="style.css")
+        link(rel='stylesheet', href='../../css/style.css')
+    body
+        .body-wrap
+            h2 純 CSS 動態顯示搜尋框
+            .dv
+                .search-bar
+                    input#btn.btn(type='checkbox', name='')
+                    label.btnLabel(for='btn')
+                        i.fa.fa-search
+                    label.btn2Label(for='btn2')
+                        i.fa.fa-search
+                    input#btn2.btn2(type='checkbox', name='')
+                    input.ip(type='text', placeholder='請輸入文字')
+            hr
+            h2 JS 動態顯示搜尋框
+            .header__search-wrapper
+                form.header__search.form-search.pull-right(role='form', method='GET', action='')
+                    input#header__searchInput.input-medium.search-query.inputSearchStyle.addsearch(type='text',
+                        name='keyword', placeholder='請輸入文字')
+                    a#header__searchBtn(href='')
+                        i.fa.fa-search(aria-hidden='true')
+        button.gobackBtn(onclick='window.history.back()') 回上一頁
+
+
+script.
+    searchBarToggle();
+    function searchBarToggle() {
+        let sBtn = document.getElementById('header__searchBtn');
+        let sInput = document.getElementById('header__searchInput');
+        if (sBtn) {
+            sBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                sInput.classList.contains('focus') ? sInput.classList.remove('focus') : sInput.classList.add('focus');
+            })
+        }
+    }

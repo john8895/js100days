@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.ip {
+  width: 0;
+  border: solid transparent;
+  transition: 0.3s ease-in-out;
+}
+
+.btn:checked {
+  display: none;
+}
+.btn:checked ~ .ip {
+  width: 20em;
+  border: solid 1px #333;
+}
+.btn:checked ~ .btnLabel {
+  display: none;
+}
+
+.btn2Label {
+  display: none;
+}
+
+.btn:checked ~ .btn2Label {
+  display: inline-block;
+}
+
+.btn2:checked ~ .ip {
+  width: 0;
+  border: solid transparent;
+}
+
+input[id^=btn] {
+  display: none;
+}
+
+.dv {
+  padding: 10px;
+}
+
+.search-bar {
+  position: relative;
+  margin: 10px 0 0 10px;
+}
+
+.ip {
+  position: absolute;
+  left: 7px;
+  top: -1px;
+  z-index: 1;
+  padding: 5px 0 5px 25px;
+  font-size: 16px;
+}
+
+.btnLabel i, .btn2Label i {
+  position: absolute;
+  left: 12px;
+  z-index: 2;
+  top: 5px;
+  cursor: pointer;
+}
+
+.header__search-wrapper {
+  position: relative;
+  margin-right: 12px;
+}
+
+.header__search .addsearch {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 32px;
+  margin: auto;
+  padding: 3px;
+  transition: 0.4s ease-in-out !important;
+  border: solid 1px transparent;
+  outline: none;
+  box-sizing: border-box;
+  z-index: 1;
+  cursor: auto;
+  opacity: 0;
+}
+.header__search .addsearch.focus {
+  width: 20em;
+  transition: 0.4s ease-in-out !important;
+  border: 1px solid #ccc !important;
+  opacity: 1;
+}
+.header__search #header__searchBtn {
+  position: absolute;
+  z-index: 2000;
+  height: 21px;
+  cursor: pointer;
+  padding: 4px;
+  right: 1px;
+  top: 0;
+  width: 20px;
+  display: none;
+}
+.header__search #header__searchBtn i {
+  font-size: 26px;
+}
+
+@media all and (min-width: 992px) {
+  .header__search #header__searchBtn {
+    display: inline-block;
+  }
+}
+.header__nav {
+  margin: 10px 0 0 0;
+  float: left;
+}
+
+.body-wrap {
+  width: 600px;
+  margin: auto;
+  font-family: "Microsoft JhengHei";
+}
+
+/*# sourceMappingURL=style.css.map */
