@@ -1,0 +1,11 @@
+//- Variable
+
+//- Navbar Menu
+    ----------------------------------
+mixin header__navbar-item(itemTitle,linkUrl,hasDorpdown)
+    li
+        a(href=linkUrl,title=itemTitle,
+        class=hasDorpdown?'dropdown-toggle':'')
+            =itemTitle
+        if hasDorpdown && block
+                block
