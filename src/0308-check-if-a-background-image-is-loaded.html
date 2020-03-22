@@ -1,158 +1,129 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <title>控制網頁元素誰先載入（顯示）相容IE</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
-      * {
-          font-family: "Microsoft JhengHei";
-      }
-      
-      #test-bg {
-          background-image: url("https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
-          background-repeat: no-repeat;
-          background-size: cover;
-          width: 100%;
-          height: 450px;
-          position: relative;
-      }
-      
-      .text {
-          position: absolute;
-          top: 45px;
-          right: 50px;
-          background-color: #fff;
-          height: 200px;
-          width: 400px;
-          opacity: 0;
-          transition: all 1s ease-in-out;
-      }
+        * {
+            font-family: "Microsoft JhengHei";
+        }
+
+        #test-bg {
+            background-image: url("https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 450px;
+            position: relative;
+        }
+
+        .text {
+            position: absolute;
+            top: 45px;
+            right: 50px;
+            background-color: #fff;
+            height: 200px;
+            width: 400px;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+        }
+
     </style>
-  </head>
-  <body>
-    <header class="header__layout-header">
-      <div class="container">
-        <div class="j-brand"><a href="index.html" title="首頁"><img src="http://fakeimg.pl/200x60" alt=""></a></div>
-        <nav class="j-navbar">
-          <ul class="nav navbar navbar-menu">
-                <li><a href="index.html" title="首頁">首頁</a>
-                </li>
-                <li><a class="dropdown-toggle" href="javascript:void(0)" title="關於阿翰">關於阿翰</a>
-                  <ul class="dropdown-menu">
-                    <li class="dropdown-item"><a href="javascript:void(0)" title="關於阿翰1">關於阿翰1</a></li>
-                    <li class="dropdown-item"><a href="javascript:void(0)" title="關於阿翰2">關於阿翰2</a></li>
-                    <li class="dropdown-item"><a href="javascript:void(0)" title="關於阿翰3">關於阿翰3</a></li>
-                  </ul>
-                </li>
-                <li><a class="dropdown-toggle" href="javascript:void(0)" title="網頁作品">網頁作品</a>
-                  <ul class="dropdown-menu">
-                    <li class="dropdown-item"><a href="javascript:void(0)" title="網頁作品1">網頁作品1</a></li>
-                    <li class="dropdown-item"><a href="javascript:void(0)" title="網頁作品2">網頁作品2</a></li>
-                    <li class="dropdown-item"><a href="javascript:void(0)" title="網頁作品3">網頁作品3</a></li>
-                  </ul>
-                </li>
-                <li><a class="dropdown-toggle" href="javascript:void(0)" title="程式作品">程式作品</a>
-                  <ul class="dropdown-menu">
-                    <li class="dropdown-item"><a href="javascript:void(0)" title="程式作品1">程式作品1</a></li>
-                    <li class="dropdown-item"><a href="javascript:void(0)" title="程式作品2">程式作品2</a></li>
-                    <li class="dropdown-item"><a href="javascript:void(0)" title="程式作品3">程式作品3</a></li>
-                  </ul>
-                </li>
-                <li><a href="javascript:void(0)" title="與我聯絡">與我聯絡</a>
-                </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <p>程式目的：判斷背景圖片 background-image 是否已載入完畢，載入完畢才顯示文字方塊
-      <p>
-        這邊採用的是一個 function 去讀取 CSS 的 background-image 網址，然後再去掉 url("") 等符號，取出圖片路徑，再創建一個 image
-        ，就可用 image.onload 來判斷圖片是否載入完成，如果載入完成，再執行計時器，然後再顯示文字方塊
-      </p>
-      <div id="test-bg">
-        <div class="text" id="textBlock">
-          <h4>我是一段文字</h4>
-          <p>我是第二段文字</p>
-        </div>
-      </div>
-      <h1 id="showText"></h1>
-      <hr>code:
-      <pre>\n    function getBgUrl(el) {
-    //取得元素CSS樣式中的背景（不只有行內，連CSS檔案都可以）
-    var bg = "";
-    if (el.currentStyle) { // IE
-        bg = el.currentStyle.backgroundImage;
-    } else if (document.defaultView && document.defaultView.getComputedStyle) { // Firefox
-        bg = document.defaultView.getComputedStyle(el, "").backgroundImage;
-    } else { // try and get inline style
-        bg = el.style.backgroundImage;
+</head>
+<body>
+<p>程式目的：判斷背景圖片 background-image 是否已載入完畢，載入完畢才顯示文字方塊</p>
+<p>這邊採用的是一個 function 去讀取 CSS 的 background-image 網址，然後再去掉 url("") 等符號，取出圖片路徑，再創建一個 image
+    ，就可用 image.onload 來判斷圖片是否載入完成，如果載入完成，再執行計時器，然後再顯示文字方塊
+</p>
+<div id="test-bg">
+    <div class="text" id="textBlock">
+        <h4>我是一段文字</h4>
+        <p>我是第二段文字</p>
+    </div>
+</div>
+<h1 id="showText"></h1>
+<hr>
+code:
+<pre>
+    function getBgUrl(el) {
+        //取得元素CSS樣式中的背景（不只有行內，連CSS檔案都可以）
+        var bg = "";
+        if (el.currentStyle) { // IE
+            bg = el.currentStyle.backgroundImage;
+        } else if (document.defaultView && document.defaultView.getComputedStyle) { // Firefox
+            bg = document.defaultView.getComputedStyle(el, "").backgroundImage;
+        } else { // try and get inline style
+            bg = el.style.backgroundImage;
+        }
+        return bg.replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
     }
-    return bg.replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
-    }
+
     let image = document.createElement('img');
     image.src = getBgUrl(document.getElementById('test-bg'));
     console.log(image.src);
+
     let showText = document.getElementById('showText');
     showText.textContent = "圖片載入中…";
+
     image.onload = function () {
         //圖片載入完畢
         var num = 3;
         showText.textContent = "圖片已載入完畢，"+ num +" 秒後顯示文字框";
+
         var timeId = setInterval(function () {
             num--;
             showText.textContent = "圖片載入完畢，" + num + " 秒後顯示文字框";
+
             if (num === 0) {
                 clearInterval(timeId);
                 showText.innerText = "圖片已載入完畢，文字框已顯示";
                 let textBlock = document.getElementById('textBlock');
                 textBlock.style.opacity = "1";
+            }
+        }, 1000);
+    }
+</pre>
+<br><br>
+<button class="gobackBtn" onclick="window.history.back()">回上一頁</button>
+<script>
+    function getBgUrl(el) {
+        //取得元素CSS樣式中的背景（不只有行內，連CSS檔案都可以）
+        var bg = "";
+        if (el.currentStyle) { // IE
+            bg = el.currentStyle.backgroundImage;
+        } else if (document.defaultView && document.defaultView.getComputedStyle) { // Firefox
+            bg = document.defaultView.getComputedStyle(el, "").backgroundImage;
+        } else { // try and get inline style
+            bg = el.style.backgroundImage;
         }
-    }, 1000);
-    }</pre>
-    </p><br><br>
-    <button class="gobackBtn" onclick="window.history.back()">回上一頁</button>
-    <script>
-      function getBgUrl(el) {
-          //取得元素CSS樣式中的背景（不只有行內，連CSS檔案都可以）
-          var bg = "";
-          if (el.currentStyle) { // IE
-              bg = el.currentStyle.backgroundImage;
-          } else if (document.defaultView && document.defaultView.getComputedStyle) { // Firefox
-              bg = document.defaultView.getComputedStyle(el, "").backgroundImage;
-          } else { // try and get inline style
-              bg = el.style.backgroundImage;
-          }
-          return bg.replace(/url\\(['"]?(.*?)['"]?\)/i, "$1");
-      }
-      let image = document.createElement('img');
-      image.src = getBgUrl(document.getElementById('test-bg'));
-      console.log(image.src);
-      let showText = document.getElementById('showText');
-      showText.textContent = "圖片載入中…";
-      image.onload = function () {
-          //圖片載入完畢
-          var num = 3;
-          showText.textContent = "圖片已載入完畢，" + num + " 秒後顯示文字框";
-          var timeId = setInterval(function () {
-              num--;
-              showText.textContent = "圖片載入完畢，" + num + " 秒後顯示文字框";
-              if (num === 0) {
-                  clearInterval(timeId);
-                  showText.innerText = "圖片已載入完畢，文字框已顯示";
-                  let textBlock = document.getElementById('textBlock');
-                  textBlock.style.opacity = "1";
-              }
-          }, 1000);
-      }
-    </script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/slick.min.js"></script>
-    <script type="text/javascript" src="js/custom.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
-  </body>
+        return bg.replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
+    }
+
+    let image = document.createElement('img');
+    image.src = getBgUrl(document.getElementById('test-bg'));
+    console.log(image.src);
+
+    let showText = document.getElementById('showText');
+    showText.textContent = "圖片載入中…";
+
+    image.onload = function () {
+        //圖片載入完畢
+        var num = 3;
+        showText.textContent = "圖片已載入完畢，"+ num +" 秒後顯示文字框";
+
+        var timeId = setInterval(function () {
+            num--;
+            showText.textContent = "圖片載入完畢，" + num + " 秒後顯示文字框";
+
+            if (num === 0) {
+                clearInterval(timeId);
+                showText.innerText = "圖片已載入完畢，文字框已顯示";
+                let textBlock = document.getElementById('textBlock');
+                textBlock.style.opacity = "1";
+            }
+        }, 1000);
+    }
+</script>
+</body>
 </html>
