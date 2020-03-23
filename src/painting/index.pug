@@ -1,0 +1,26 @@
+doctype html
+hmtl(lang='zh-hant')
+    head
+        meta(charset='UTF-8')
+        title 刷油漆囉～
+        link(href='style.css',type='text/css',rel='stylesheet')
+        script(type='text/javascript',src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+        script(type='text/javascript',src='paint.js')
+    body
+        .wrap
+            .color-block
+                - for(var i=0;i<=10;i++)
+                    - let color;
+                    - for(var j=0;j<=6;j++)
+                        - color += parseInt(Math.random()*9)
+                    .color(style='background-color:red')
+                    .color(style='background-color:blue')
+                    .color(style='background-color:#D6DB0E')
+                    .color(style='background-color:#CBB100')
+                    .color(style='background-color:#CD2EA0')
+                    .color(style='background-color:#73127B')
+                    .color(style='background-color:#201F2B')
+                    .color(style='background-color:#99CC33')
+            br
+            .paint-block
+                .paint

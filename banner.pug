@@ -1,0 +1,24 @@
+extends include/_layout
+block head
+    title My Git Web
+block content
+    main
+        section.index__slide
+            .slide-show.slick-slider
+                div.slideImg(style='background-image:url(img/banner1.jpg)').img
+                    //img(src='img/banner1.jpg',alt='')
+                    .tp-caption
+                        h3 JANGO IS OPTIMIZED
+                    a.btn.tp-link.btn-light(href='javascript:void(0)')
+                        i.fa.fa-info-circle
+                        | &nbsp;
+                        | 瞭解更多
+
+                div.slideImg(style='background-image:url(img/banner2.jpg)').img
+                    //img(src='img/banner1.jpg',alt='')
+                    .tp-caption
+                        h3 Banner2
+                    a.btn.tp-link.btn-light(href='javascript:void(0)')
+                        i.fa.fa-info-circle
+                        | &nbsp;
+                        | 瞭解更多
