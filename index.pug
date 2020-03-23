@@ -1,15 +1,30 @@
-doctype html
-html(lang='zh-Hant')
-    head
-        include _head
-    body
-        header
-            include _header
-        main
-            .container
-                aside.sidebar
-                    img(src="http://fakeimg.pl/150x150",title="")
+extends include/_layout
+block head
+    title My Git Web
+block content
+    main
+        section.index__slide
+            .slide-show.slick-slider
+                div.slideImg(style='background-image:url(img/banner1.jpg)').img
+                    //img(src='img/banner1.jpg',alt='')
+                    .tp-caption
+                        h3 JANGO IS OPTIMIZED
+                    a.btn.tp-link.btn-light(href='javascript:void(0)')
+                        i.fa.fa-info-circle
+                        | &nbsp;
+                        | 瞭解更多
 
+                div.slideImg(style='background-image:url(img/banner2.jpg)').img
+                    //img(src='img/banner1.jpg',alt='')
+                    .tp-caption
+                        h3 Banner2
+                    a.btn.tp-link.btn-light(href='javascript:void(0)')
+                        i.fa.fa-info-circle
+                        | &nbsp;
+                        | 瞭解更多
+        .container
+                //aside.sidebar
+                //    img(src="http://fakeimg.pl/150x150",title="")
 
                 h1
                 section.content
@@ -50,6 +65,3 @@ html(lang='zh-Hant')
                             h2.post-title
                                 | 2020.03.13：
                                 a(href="src/2020-03-13/index.html",title="") 動態顯示搜尋框
-        footer
-            include _footer
-        include _js

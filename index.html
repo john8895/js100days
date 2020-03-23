@@ -1,15 +1,69 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>我的 JS 100 天挑戰</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <title>My Git Web</title>
   </head>
   <body>
-    <header></header>
-    <main>
+    <header class="header__layout-header">
       <div class="container">
-        <aside class="sidebar"><img src="http://fakeimg.pl/150x150" title=""></aside>
+        <div class="j-brand"><a href="index.html" title="首頁"><img src="http://fakeimg.pl/200x60" alt=""></a></div>
+        <nav class="j-navbar">
+          <ul class="nav navbar navbar-menu">
+                <li><a href="index.html" title="首頁">首頁</a>
+                </li>
+                <li><a class="dropdown-toggle" href="javascript:void(0)" title="關於阿翰">關於阿翰</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="javascript:void(0)" title="關於阿翰1">關於阿翰1</a></li>
+                    <li class="dropdown-item"><a href="javascript:void(0)" title="關於阿翰2">關於阿翰2</a></li>
+                    <li class="dropdown-item"><a href="javascript:void(0)" title="關於阿翰3">關於阿翰3</a></li>
+                  </ul>
+                </li>
+                <li><a class="dropdown-toggle" href="javascript:void(0)" title="網頁作品">網頁作品</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="javascript:void(0)" title="網頁作品1">網頁作品1</a></li>
+                    <li class="dropdown-item"><a href="javascript:void(0)" title="網頁作品2">網頁作品2</a></li>
+                    <li class="dropdown-item"><a href="javascript:void(0)" title="網頁作品3">網頁作品3</a></li>
+                  </ul>
+                </li>
+                <li><a class="dropdown-toggle" href="javascript:void(0)" title="程式作品">程式作品</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="javascript:void(0)" title="程式作品1">程式作品1</a></li>
+                    <li class="dropdown-item"><a href="javascript:void(0)" title="程式作品2">程式作品2</a></li>
+                    <li class="dropdown-item"><a href="javascript:void(0)" title="程式作品3">程式作品3</a></li>
+                  </ul>
+                </li>
+                <li><a href="javascript:void(0)" title="與我聯絡">與我聯絡</a>
+                </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="index__slide">
+        <div class="slide-show slick-slider">
+          <div class="slideImg img" style="background-image:url(img/banner1.jpg)">
+            <!--img(src='img/banner1.jpg',alt='')-->
+            <div class="tp-caption">
+              <h3>JANGO IS OPTIMIZED</h3>
+            </div><a class="btn tp-link btn-light" href="javascript:void(0)"><i class="fa fa-info-circle"></i>&nbsp;
+              瞭解更多</a>
+          </div>
+          <div class="slideImg img" style="background-image:url(img/banner2.jpg)">
+            <!--img(src='img/banner1.jpg',alt='')-->
+            <div class="tp-caption">
+              <h3>Banner2</h3>
+            </div><a class="btn tp-link btn-light" href="javascript:void(0)"><i class="fa fa-info-circle"></i>&nbsp;
+              瞭解更多</a>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <!--aside.sidebar-->
+        <!--    img(src="http://fakeimg.pl/150x150",title="")-->
         <h1></h1>
         <section class="content">
           <h3 class="index__postText">posts</h3>
@@ -42,6 +96,10 @@
         </section>
       </div>
     </main>
-    <footer></footer>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
   </body>
 </html>
