@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<hmtl lang="zh-hant">
-  <head>
-    <meta charset="UTF-8">
-    <title>刷油漆 填色遊戲</title>
-    <link href="style.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="paint.js"></script>
-  </head>
-  <body>
-  <h1>刷油漆 填色遊戲</h1>
-  <hr>
-  <br>
+<html lang="zh-hant">
+    <head>
+        <meta charset="UTF-8">
+        <title>刷油漆 填色遊戲</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link href="style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+    <h2 class="mt-2">刷油漆 填色遊戲</h2>
+    <hr>
+    <br>
     <div class="wrap">
-      <ul class="color-block"></ul>
-      <ul class="paint-block"></ul>
+        <input type="button" value="這排顏色我不喜歡，換一組" id="btn" class="btn btn-danger">
+        <br><br>
+        <ul class="color-block"></ul>
+        <hr>
+        <ul class="paint-block"></ul>
     </div>
-  </body>
-</hmtl>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="paint.js"></script>
+    </body>
+</html>
