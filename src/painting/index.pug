@@ -9,18 +9,13 @@ hmtl(lang='zh-hant')
     body
         .wrap
             .color-block
-                - for(var i=0;i<=10;i++)
-                    - let color;
-                    - for(var j=0;j<=6;j++)
-                        - color += parseInt(Math.random()*9)
-                    .color(style='background-color:red')
-                    .color(style='background-color:blue')
-                    .color(style='background-color:#D6DB0E')
-                    .color(style='background-color:#CBB100')
-                    .color(style='background-color:#CD2EA0')
-                    .color(style='background-color:#73127B')
-                    .color(style='background-color:#201F2B')
-                    .color(style='background-color:#99CC33')
+                .color(style='background-color:red')
+                .color(style='background-color:blue')
+                .color(style='background-color:#D6DB0E')
+                .color(style='background-color:#CBB100')
+                .color(style='background-color:#CD2EA0')
+                .color(style='background-color:#73127B')
+                .color(style='background-color:#201F2B')
             br
             .paint-block
                 .paint

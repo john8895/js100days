@@ -1,8 +1,6 @@
 $(document).ready(function () {
 
 
-
-
     let paint;
     $('.color').on('click',function () {
         paint = this.style.backgroundColor;

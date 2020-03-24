@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隨機產生色碼 Random Color</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="custom.css" type="text/css">
+</head>
+<body>
+<h1>隨機產生色碼</h1>
+<hr>
+<br>
+
+<div class="container">
+    <p>想不到要用什麼顏色嗎？電腦不只會選土豆，還可以幫你選顏色喔！～</p>
+    <div class="input-block">
+        <input type="button" value="點選產生色碼" id="btn" class="btn btn-primary">
+        <input type="text" id="colorCode" value="" class="form-control">
+    </div>
+</div>
+<br>
+<div class="container">
+    <p>一個顏色太少了嗎？一次多選幾個顏色吧！～</p>
+    <div class="color-block">
+        <label> 產生
+        <select name="colorLength" id="colorLength">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+            <option value="100" selected>100</option>
+        </select> 組
+        </label>&nbsp;
+        <input type="button" value="點選產生色碼" id="btn2" class="btn btn-success">
+        <ul id="colorBox"></ul>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+<script src="random-color.js"></script>
+</body>
+</html>

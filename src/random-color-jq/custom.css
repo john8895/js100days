@@ -1,0 +1,51 @@
+body {
+    transition: .3s ease-in-out;
+    font-family: "Microsoft JhengHei";
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.container {
+    text-align: center;
+}
+
+.input-block {
+    width: 300px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+input[type='button'] {
+    margin-right: 10px;
+}
+.color {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.color:not(:last-child) {
+    margin-right: 10px;
+}
+.color span {
+    background-color: #fff;
+    color: #000;
+}
+ul,ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#colorBox {
+    display: flex;
+    flex-wrap: wrap;
+
+}
