@@ -1,4 +1,3 @@
-
 var BLOCK_SIZE = 20;
 var BLOCK_COUNT = 20;
 
