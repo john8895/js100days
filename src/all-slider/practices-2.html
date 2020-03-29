@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 3000px;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .all ol li.current {
+            background: #DB192A;
+        }
+
+        #arr {
+            display: none;
+        }
+
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>完整輪播圖</h1>
+<hr>
+<div class="all" id='box'>
+    <div class="screen"><!--相框-->
+        <ul>
+            <li><img src="images/1.jpg" width="500" height="200"/></li>
+            <li><img src="images/2.jpg" width="500" height="200"/></li>
+            <li><img src="images/3.jpg" width="500" height="200"/></li>
+            <li><img src="images/4.jpg" width="500" height="200"/></li>
+            <li><img src="images/5.jpg" width="500" height="200"/></li>
+        </ul>
+        <ol>
+        </ol>
+    </div>
+    <div id="arr"><span id="left">&lt;</span><span id="right">&gt;</span></div>
+</div>
+<script src="common.js"></script>
+
+<script>
+    var box = document.getElementById('box');
+    var screen = box.children[0];
+    var ulObj = screen.children[0];
+    var imgWidth = ulObj.children[0].offsetWidth;
+    var olObj = screen.children[1];
+    var arrow = document.getElementById('arr');
+
+    //產生小按鈕
+    var pic = 0;
+    for (var i = 0; i < ulObj.children.length; i++) {
+        var newLi = document.createElement('li');
+        newLi.innerHTML = (i + 1);
+        newLi.setAttribute('index', i)
+        olObj.appendChild(newLi);
+        olObj.children[0].setAttribute('class', 'current');
+        olObj.children[i].onmouseover = function () {
+            for (var j = 0; j < olObj.children.length; j++) {
+                olObj.children[j].removeAttribute('class');
+                this.className = 'current';
+                pic = this.getAttribute('index');
+                animate(ulObj, -pic * imgWidth);
+            }
+        }
+    }
+
+    //clone第一張圖
+    ulObj.appendChild(ulObj.children[0].cloneNode(true));
+
+    box.onmouseover = function () {
+        arrow.style.display = "block";
+    }
+    box.onmouseout = function () {
+        arrow.style.display = "none";
+    }
+
+    document.getElementById('right').onclick = function () {
+        //如果用戶看到第6張圖（內容第一張），要顯示第2張
+        if (pic === ulObj.children.length - 1) {
+            pic = 0;
+            ulObj.style.left = 0 + "px";
+        }
+        pic++;
+        animate(ulObj, -pic * imgWidth);
+
+        if (pic === ulObj.children.length - 1) {
+            olObj.children[olObj.children.length - 1].className ="";
+            olObj.children[0].className='current'
+        }else{
+            //按鈕排他
+            for(var i=0;i<olObj.children.length;i++){
+                olObj.children[i].removeAttribute('class');
+            }
+            olObj.children[pic].className = 'current';
+        }
+
+
+    }
+    document.getElementById('left').onclick = function () {
+
+    }
+
+
+    //主要動畫函數
+    function animate(element, target) {
+        clearInterval(element.timeId);
+        element.timeId = setInterval(function () {
+            var current = element.offsetLeft;
+            var step = 10;
+            step = current < target ? step : -step;
+            current += step;
+            if (Math.abs(target - current) > Math.abs(step)) {
+                element.style.left = current + "px";
+            } else {
+                clearInterval(element.timeId);
+                element.style.left = target + "px";
+            }
+        }, 20)
+    }
+</script>
+</body>
+</html>

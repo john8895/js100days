@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var data = [
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "5901012409",
+                "name": "家音藥局",
+                "phone": "02 -37652080",
+                "address": "台北市松山區民生東路5段73號"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "5901012490",
+                "name": "中美藥局",
+                "phone": "02 -27627468",
+                "address": "臺北市松山區富錦街531號"
+            }
+        }
+    ];
+    // for(var i =0;i<data.length;i++){
+    //     data.properties.address.indexOf('臺')
+    // }
+    var keyword = '台北市松山區';
+    var result = data.filter(function (value) {
+        return value.properties.address.indexOf(keyword) !== -1 ? keyword : false;
+    });
+    // console.log(result);
+
+
+    var string = 'aaabbbccc';
+    //把 a 替換成 b：
+
+    console.log(string.replace(/a*/g,'c'));
+
+
+    // ['臺北','臺中','臺南','臺東']
+    // ['臺北','臺中','臺南','臺東']
+
+
+</script>
+</body>
+</html>
