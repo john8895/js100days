@@ -113,7 +113,33 @@
     </div>
     <div id="arr"><span id="left">&lt;</span><span id="right">&gt;</span></div>
 </div>
+<script src="common.js"></script>
 <script>
+    var box =my$('box');
+    var screen = box.children[0];
+    var ulObj=screen.children[0];
+    var list =ulObj.children;
+    var imgWidth=list[0].offsetWidth;
+    var olObj=screen.children[1];
+    var arrow = my$('arr');
+
+    var pic=0;
+    for(var i=0;i<ulObj.children.length;i++){
+        var newLi = document.createElement('li');
+        newLi.innerText = (i+1);
+        newLi.setAttribute('index',i)
+        olObj.appendChild(newLi)
+        olObj.children[0].className = 'current';
+        olObj.children[i].onmouseover = function () {
+            for(var j=0;j<olObj.children.length;j++){
+                olObj.children[j].removeAttribute('class');
+            }
+            this.className = 'current';
+            pic = this.getAttribute('index');
+            animate(ulObj,-pic*imgWidth)
+        }
+
+    }
 
     //animate
     function animate(element, target) {
