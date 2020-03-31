@@ -141,7 +141,21 @@
         var city = select.children[0];
         var district = select.children[1];
         district.onchange = function () {
-            var keywords = city.value + district.value
+            //冠均改的-------------------------
+            var temp_keyword = city.value + district.value;
+            var temp_keyword1 = '';
+            //不管輸入「臺」或「台」，都會轉出另一個台（臺），得到兩個keyword的數組
+            if (temp_keyword.indexOf('台') >= 0) {
+                temp_keyword1 = temp_keyword.replace('台', '臺');
+            } else {
+                temp_keyword1 = temp_keyword.replace('臺', '台');
+            }
+            var keywords = [temp_keyword,temp_keyword1];
+            console.log(temp_keyword);
+            console.log(temp_keyword1);
+            //冠均改的-------------------------
+
+            // var keywords = city.value + district.value
             updateMaskList(keywords);
             // updateMap();
         }
@@ -155,14 +169,27 @@
         var str = '';
         addrDataArr = [];
         //篩選數據
-        var result=data.filter(function (value) {
-            return value.properties.address.indexOf(keywords)!==-1?keywords:false;
+        //冠均改的-------------------------
+        var result_temp = [];
+        keywords.forEach(function (kv,ki) {
+            result_temp[ki] = data.filter(function (value) {
+                return value.properties.address.indexOf(kv) !==-1? kv:false;
+            })
         })
-        console.log(result.filter(value=>value.properties.address.indexOf('好好')));
+        
+        var result = result_temp[0].concat(result_temp[1]);
+        console.log(result);
+        //冠均改的-------------------------
+
+
+        // var result = data.filter(function (value) {
+        //     return value.properties.address.indexOf(keywords) !== -1 ? keywords : false;
+        // })
+        // console.log(result.filter(value => value.properties.address.indexOf('好好')));
 
         for (var i = 0; i < result.length; i++) {
             //根據選擇城市、區域，進行數據篩選
-                str += `<article>
+            str += `<article>
                             <h4>${result[i].properties.name}</h4>
                                 <ul>
                                     <li>${result[i].properties.address}</li>
@@ -177,15 +204,16 @@
                                 ${result[i].properties.updated} 更新
                             </span>
                                   </article>`;
-                maskLeftNum++;
-                addrDataArr.push(result[i]);
+            maskLeftNum++;
+            addrDataArr.push(result[i]);
         }
         storeList.innerHTML = str; //更新左側藥局清單
         maskLeftTitle.innerText = maskLeftNum; //更新 尚有庫存店家筆數
 
         // map.addLayer(markers)
     }
-    function updateMarker(lat,lon) {
+
+    function updateMarker(lat, lon) {
         L.marker([lat, lon], {icon: redIcon}).addTo(map)
             .bindPopup('<h1>你的位置</h1>')
             .openPopup();
@@ -287,7 +315,6 @@
         storeList.innerHTML = str; //更新左側藥局清單
         maskLeftTitle.innerText = maskLeftNum; //更新 尚有庫存店家筆數
     }
-
 
 
     //接著要做：

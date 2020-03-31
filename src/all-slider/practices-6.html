@@ -114,23 +114,71 @@
     <div id="arr"><span id="left">&lt;</span><span id="right">&gt;</span></div>
 </div>
 <script>
+    var box = document.getElementById('box');
+    var screen = box.children[0];
+    var ulObj=screen.children[0];
+    var list = ulObj.children;
+    var imgWidth=list[0].offsetWidth;
+    var olObj=screen.children[1];
+    var arrow=document.getElementById('arr');
 
-    //animate
-    function animate(element, target) {
+    var pic=0;
+    for(var i=0;i<ulObj.children.length;i++){
+        var newLi = document.createElement('li');
+        newLi.setAttribute('index',i);
+        newLi.innerText= (i+1);
+        olObj.appendChild(newLi);
+        olObj.children[0].className = 'current';
+        olObj.children[i].onmouseover = function () {
+            for(var j=0;j<olObj.children.length;j++){
+                olObj.children[j].removeAttribute('class');
+            }
+            this.className = 'current';
+            pic = this.getAttribute('index');
+            animate(ulObj,-pic*imgWidth);
+        }
+    }
+
+    ulObj.appendChild(ulObj.children[0].cloneNode(true));
+
+    box.onmouseover = function () {
+        arrow.style.display = "block";
+    }
+    box.onmouseout = function () {
+        arrow.style.display = "none";
+    }
+
+    document.getElementById('right').onclick = function () {
+        if(pic===ulObj.children.length-1){
+            console.log('e');
+            pic=0;
+            ulObj.style.left = 0+"px";
+            console.log(pic);
+        }
+        pic++;
+        animate(ulObj,-pic*imgWidth);
+        // if(pic===5){
+        //
+        //     olObj.children[0].className = 'current';
+        // }
+    }
+
+    function animate(element,target) {
         clearInterval(element.timeId);
         element.timeId = setInterval(function () {
             var current = element.offsetLeft;
-            var step = 10;
-            step = current < target ? step : -step;
-            current += step;
-            if (Math.abs(target - current) > Math.abs(step)) {
-                element.style.left = current + "px";
-            } else {
+            var step=10;
+            step=current<target?step:-step;
+            current+=step;
+            if(Math.abs(target-current)>Math.abs(step)){
+                element.style.left = current+"px";
+            }else{
                 clearInterval(element.timeId);
-                element.style.left = target + "px";
+                element.style.left = target+"px";
             }
-        }, 10)
+        },10)
     }
+
 </script>
 </body>
 </html>
