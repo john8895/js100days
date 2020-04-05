@@ -1,28 +1,29 @@
 include _mixins
-header.header__layout-header
-    .container
-        .j-brand
-            a(href='index.html',title='首頁')
-                img(src='http://fakeimg.pl/200x60',alt='')
-        nav.j-navbar
-            ul.nav.navbar.navbar-menu
-                +header__navbar-item('首頁','index.html')
-                +header__navbar-item('關於阿翰','javascript:void(0)',true)
-                    ul.dropdown-menu
-                        - for(var i=1;i<=3;i++)
-                            li.dropdown-item
-                                a(href='javascript:void(0)',title='關於阿翰'+i)
-                                    = '關於阿翰'+i
-                +header__navbar-item('網頁作品','javascript:void(0)',true)
-                    ul.dropdown-menu
-                        - for(var i=1;i<=3;i++)
-                            li.dropdown-item
-                                a(href='javascript:void(0)',title='網頁作品' + i)
-                                    = '網頁作品' + i
-                +header__navbar-item('程式作品','javascript:void(0)',true)
-                    ul.dropdown-menu
-                        - for(var i=1;i<=3;i++)
-                            li.dropdown-item
-                                a(href='javascript:void(0)',title='程式作品' + i)
-                                    = '程式作品' + i
-                +header__navbar-item('與我聯絡','javascript:void(0)')
+//-
+    header.header__layout-header
+        .container
+            .j-brand
+                a(href='index.html',title='首頁')
+                    img(src='http://fakeimg.pl/200x60',alt='')
+            nav.j-navbar
+                ul.nav.navbar.navbar-menu
+                    +header__navbar-item('首頁','index.html')
+                    +header__navbar-item('關於阿翰','javascript:void(0)',true)
+                        ul.dropdown-menu
+                            - for(var i=1;i<=3;i++)
+                                li.dropdown-item
+                                    a(href='javascript:void(0)',title='關於阿翰'+i)
+                                        = '關於阿翰'+i
+                    +header__navbar-item('網頁作品','javascript:void(0)',true)
+                        ul.dropdown-menu
+                            - for(var i=1;i<=3;i++)
+                                li.dropdown-item
+                                    a(href='javascript:void(0)',title='網頁作品' + i)
+                                        = '網頁作品' + i
+                    +header__navbar-item('程式作品','javascript:void(0)',true)
+                        ul.dropdown-menu
+                            - for(var i=1;i<=3;i++)
+                                li.dropdown-item
+                                    a(href='javascript:void(0)',title='程式作品' + i)
+                                        = '程式作品' + i
+                    +header__navbar-item('與我聯絡','javascript:void(0)')
