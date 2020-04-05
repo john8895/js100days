@@ -1,0 +1,57 @@
+doctype html
+html(lang='zh-Hant')
+    head
+        meta(charset='UTF-8')
+        title JQuery Dynamic Tabs
+        link(rel='stylesheet',href='css/style.css')
+    body
+        .readme
+            h1.readme__title JQuery Dynamic Tabs
+            pre.
+                &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"&gt;&lt;/script&gt;
+
+                $(function () {
+                    $('.tab li').click(function () {
+                        $(this).addClass('active').siblings().removeClass('active');
+                        let index = $(this).index();
+                        $('.main-content-item').eq(index).addClass('selected').siblings().removeClass('selected')
+                    })
+                })
+            br
+            hr
+        .wrap
+            ul.tab
+                li.tab-item.active
+                    a(href='javascript:void(0)') Home
+                li.tab-item
+                    a(href='javascript:void(0)') Menu1
+                li.tab-item
+                    a(href='javascript:void(0)') Menu2
+                li.tab-item
+                    a(href='javascript:void(0)') Menu3
+            .main-content
+                .main-content-item.selected
+                    h4 HOME
+                    p
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto, at atque consequuntur corporis deleniti dolore eos est et expedita fugiat nisi odit omnis placeat quam quod reprehenderit sint voluptatum!
+                .main-content-item
+                    h4 Menu1
+                    p
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto, at atque consequuntur corporis deleniti dolore eos est et expedita fugiat nisi odit omnis placeat quam quod reprehenderit sint voluptatum!
+                .main-content-item
+                    h4 Menu2
+                    p
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto, at atque consequuntur corporis deleniti dolore eos est et expedita fugiat nisi odit omnis placeat quam quod reprehenderit sint voluptatum!
+                .main-content-item
+                    h4 Menu3
+                    p
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto, at atque consequuntur corporis deleniti dolore eos est et expedita fugiat nisi odit omnis placeat quam quod reprehenderit sint voluptatum!
+        script(src='../../js/jquery.min.js')
+        script(type='text/javascript').
+            $(function () {
+                $('.tab li').click(function () {
+                    $(this).addClass('active').siblings().removeClass('active');
+                    let index = $(this).index();
+                    $('.main-content-item').eq(index).addClass('selected').siblings().removeClass('selected')
+                })
+            })
