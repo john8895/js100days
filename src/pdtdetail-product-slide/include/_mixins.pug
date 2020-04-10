@@ -1,0 +1,128 @@
+//- Banner
+//- -----------------------------------
+mixin index__bannerItem(id,imgUrl,text1,text2,position)
+    - if(position =='left')
+        li.banner__slide-item.left(data-index='rs-'+id, data-transition='slideoverup', data-slotamount='7',
+            data-easein='Power4.easeInOut',
+            data-easeout='Power4.easeInOut', data-masterspeed='1200', data-thumb='img/b1.jpg', data-rotate='0', data-saveperformance='off', data-title='Banner 1')
+            img.rev-slidebg(src=imgUrl, alt='Slider bg', data-bgposition='center center', data-bgfit='100%', data-duration='11000', data-bgparallax='10', data-ease='Linear.easeNone', data-no-retina='')
+            .banner-title-text.tp-caption.tp-resizeme.rs-parallaxlevel-0(data-x=['left', 'left', 'left', 'left',
+                'left', 'center', 'center', 'center', 'center', 'center'],
+                data-y='center',
+                data-hoffset="['-200', '360', '360', '360', '0', '0', '0', '0', '0', '0']",
+                data-voffset="['-60', '-60', '-60', '-60', '-60', '-100', '-10', '-10', '-10', '-10']",
+                data-fontweight='700',
+                data-fontsize="['46', '46', '30', '40', '35', '25', '18', '17', '17', '17']",
+                data-lineheight="['50', '45', '40', '39']",
+                data-color='#FFF', data-textalign='left', data-basealign='grid', data-responsive_offset='off',
+                data-width='none', data-height='none', data-whitespace='nowrap', data-transform_idle='o:1;',
+                data-transform_in='x:[100%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;',
+                data-transform_out='y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;',
+                data-mask_in='x:0px;y:0px;s:inherit;e:inherit;', data-mask_out='x:inherit;y:inherit;s:inherit;e:inherit;',
+                data-start='800', data-splitin='none', data-splitout='none', data-elementdelay='0.1',
+                style='z-index: 5; white-space: nowrap;text-shadow: rgba(0, 0, 0, 0.15) 2px 3px 4px;')
+                =text1
+            .banner-subtitle.tp-caption.tp-resizeme.rs-parallaxlevel-0(data-x=['left', 'left', 'left', 'left',
+                'left', 'center', 'center', 'center', 'center', 'center'],
+                data-y='center',
+                data-hoffset="['-200', '360', '360', '0', '0', '0', '0', '0', '0', '0']",
+                data-voffset="['0', '0', '0', '0','0', '-60', '20', '20', '20', '20']",
+                data-width="['auto','auto','auto','auto']",
+                data-fontsize="['23', '30', '23', '30','30', '23', '13', '15', '15', '15']",
+                data-lineheight="['auto', 'auto', 'auto', 'auto']", data-color='#FFF', data-textalign='left',
+                data-basealign='grid', data-responsive_offset='off', data-whitespace='nowrap',
+                data-type='text', data-transform_idle='o:1;',
+                data-transform_in='y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1000;e:Power4.easeInOut;',
+                data-transform_out='y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;',
+                data-mask_in='x:0px;y:[100%];s:inherit;e:inherit;', data-mask_out='x:inherit;y:inherit;s:inherit;e:inherit;',
+                data-start='1300', data-splitin='none', data-splitout='none',
+                style='z-index: 6; white-space: nowrap; text-shadow:0 2px 5px rgba(0,0,0, 0.45);')
+                =text2
+    - else
+        li.banner__slide-item.right(data-index='rs-'+id, data-transition='slideoverup', data-slotamount='7',
+            data-easein='Power4.easeInOut', data-easeout='Power4.easeInOut', data-masterspeed='1200', data-thumb='img/b2.jpg', data-rotate='0', data-saveperformance='off', data-title='Banner 1')
+            img.rev-slidebg(src=imgUrl, alt='Slider bg', data-bgposition='center center', data-bgfit='100%', data-duration='11000', data-bgparallax='10', data-ease='Linear.easeNone', data-no-retina='')
+            .banner-title-text.tp-caption.tp-resizeme.rs-parallaxlevel-0(data-x=['right','right','right','right',
+                'right','center','center','center','center','center'],
+                data-y="center",
+                data-hoffset="['360', '360', '100', '100', '0', '0', '0', '0', '0', '0']",
+                data-voffset="['-60', '-60', '-60', '-60', '-60', '-100', '-10', '-10', '-10', '-10']",
+                data-fontweight='700',
+                data-fontsize="['46', '46', '40', '40', '35', '25', '18', '17', '17', '17']",
+                data-lineheight="['50', '45', '40', '39']",
+                data-color='#FFF', data-textalign='right', data-basealign='grid', data-responsive_offset='off',
+                data-width='none', data-height='none', data-whitespace='nowrap', data-transform_idle='o:1;',
+                data-transform_in='x:[100%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;',
+                data-transform_out='y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;',
+                data-mask_in='x:0px;y:0px;s:inherit;e:inherit;', data-mask_out='x:inherit;y:inherit;s:inherit;e:inherit;',
+                data-start='800', data-splitin='none', data-splitout='none', data-elementdelay='0.1',
+                style='z-index: 5; white-space: nowrap;text-shadow: rgba(0, 0, 0, 0.15) 2px 3px 4px;')
+                =text1
+            .banner-subtitle.tp-caption.tp-resizeme.rs-parallaxlevel-0(data-x=['right', 'right', 'right', 'right',
+                'center', 'center', 'center', 'center', 'center', 'center'],
+                data-y='middle',
+                data-hoffset="['360', '360', '100', '100', '0', '0', '0', '0', '0', '0']",
+                data-voffset="['0', '0', '0', '0','0', '-60', '20', '20', '20', '20']",
+                data-width="['auto','auto','auto','auto']",
+                data-fontsize="['23', '30', '30', '30','30', '23', '16', '15', '15', '15']",
+                data-lineheight="['auto', 'auto', 'auto', 'auto']", data-color='#FFF', data-textalign='right',
+                data-basealign='grid', data-responsive_offset='off', data-whitespace='nowrap',
+                data-type='text', data-transform_idle='o:1;',
+                data-transform_in='y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1000;e:Power4.easeInOut;',
+                data-transform_out='y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;',
+                data-mask_in='x:0px;y:[100%];s:inherit;e:inherit;', data-mask_out='x:inherit;y:inherit;s:inherit;e:inherit;',
+                data-start='1300', data-splitin='none', data-splitout='none',
+                style='z-index: 6; white-space: nowrap; text-shadow:0 2px 5px rgba(0,0,0, 0.45);')
+                =text2
+//- Banner
+//- -----------------------------------
+mixin index__products(title,imgUrl)
+    .col-sm-6.col-lg-3.col-xs-12
+        .card
+            a.position-relative(href='pdt-list.html',title=title)
+                img.card-img-top.lazyestload(data-src=imgUrl, alt=title)
+            .card-body.border-top-5.px-3.border-danger
+                h3.card-title.text-center.index__product__title
+                    a.text-capitalize.d-block(href='pdt-list.html', title=title)=title
+                .d-block.text-center
+                    a.btn.small.btn-white.text-uppercase.mb-1.btn-hover-danger(href='pdt-list.html', title='了解更多')
+                        | 了解更多
+                        i.fa.fa-angle-right(aria-hidden='true')
+                            input(type="hidden")
+//- pdt-list aside
+//- -----------------------------------
+mixin pdtList__aside(id, subId, title, subTitle1, subTitle2)
+    .accordion(id='pdtList__aside_'+id)
+        .card.mb-2
+            #headingOne.card-header
+                h5.text-muted.font-weight-medium.d-block.border.rounded.icon-bg.collapsed.active(data-toggle='collapse',
+                    data-target=`#pdtList__aside_${id}__collapse_${subId}`, aria-expanded='false',
+                    aria-controls='collapse-'+subId)
+                    span(title=title)=title
+            .shadow-sm.rounded-sm.collapse(id='pdtList__aside_'+id+'__collapse_'+subId,
+                aria-labelledby='headingOne', data-parent='#pdtList__aside_'+id)
+                .card-body
+                    ul.sidebar
+                        li
+                            a.link(href='pdt-list.html', title=subTitle1)=subTitle1
+                        li
+                            a.link(href='pdt-list.html', title=subTitle2)=subTitle2
+//- pdt-list item
+//- -----------------------------------
+mixin pdtList__item(title,imgUrl)
+    .col-md-6.col-lg-4
+        .card.card-product.border-lightgray.border-danger-hover.card-hover
+            a.img-link(href='pdt-details.html', title=title)
+                img.img-fluid.img-in-ie(src=imgUrl, alt=title)
+            .pdt-list-item.card-body.bg-danger-hover.px-4.py-5.text-center
+                h5.mb-3.index__product__title
+                    a(href='pdt-details.html', title=title)=title
+                a.btn.btn-sm.btn-white.text-hover-danger.text-uppercase.d-inline-block(href='pdt-details.html', title='了解更多')
+                    | 了解更多
+//- pdt-details 產品輪播
+//- -----------------------------------------
+mixin pdtDetails__productsSlide(imgUrl)
+    a.product-gallery-item(href='javascript: void(0)',
+        data-image=imgUrl,
+        data-zoom-image=imgUrl)
+        img(src=imgUrl, alt='ProductName')

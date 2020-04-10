@@ -1,0 +1,84 @@
+header#pageTop.header
+    #preloader.smooth-loader-wrapper
+        .smooth-loader
+            .loader
+                span.dot.dot-1
+                span.dot.dot-2
+                span.dot.dot-3
+                span.dot.dot-4
+    .color-bar
+        .container-fluid
+            .row
+                .col.color-bar.bg-warning.d-none.d-md-block
+                .col.color-bar.bg-info.d-none.d-md-block
+                .col.color-bar.bg-success.d-none.d-md-block
+                .col.color-bar.bg-danger.d-none.d-md-block
+                .col.color-bar.bg-warning.d-none.d-md-block
+                .col.color-bar.bg-info.d-none.d-md-block
+                .col.color-bar.bg-success
+                .col.color-bar.bg-danger
+                .col.color-bar.bg-warning
+                .col.color-bar.bg-info
+                .col.color-bar.bg-success
+                .col.color-bar.bg-danger
+    nav.navbar.navbar-expand-md.navbar-scrollUp.navbar-sticky.navbar-white
+        .container
+            a.navbar-brand(href='index.html', title='魔力紅')
+                img.d-inline-block(src='img/logo.jpg', alt='魔力紅 LOGO')
+            button.navbar-toggler.py-2(type='button', data-toggle='collapse', data-target='#navbarContent', aria-controls='navbarContent', aria-expanded='false', aria-label='Toggle navigation')
+                i.fa.fa-bars
+            #navbarContent.collapse.navbar-collapse
+                ul.navbar-nav.ml-lg-auto
+                    li.nav-item.dropdown.bg-danger
+                        a.nav-link(href='ab.html', title='關於慶隆')
+                            i.fa.fa-home.nav-icon(aria-hidden='true')
+                            span 關於慶隆
+                    li.nav-item.dropdown.bg-danger
+                        a.nav-link.dropdown-toggle(href='javascript:void(0)', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false', title='產品資訊')
+                            i.fa.fa-list-ul.nav-icon(aria-hidden='true')
+                            span 產品資訊
+
+                        ul.dropdown-menu(aria-labelledby='navbarDropdown1')
+                            li.dropdown-submenu-toggle
+                                a.dropdown-item(href='pdt-list.html', title='寵物類') 寵物類
+                                ul.dropdown-submenu(aria-labelledby='navbarDropdown1')
+                                    li
+                                        a.dropdown-item(href='pdt-list.html', title='寵物各式籠具') 寵物各式籠具
+                                    li
+                                        a.dropdown-item(href='pdt-list.html', title='飼料罐頭') 飼料罐頭
+                            li.dropdown-submenu-toggle
+                                a.dropdown-item(href='pdt-list.html', title='水族類') 水族類
+                                ul.dropdown-submenu(aria-labelledby='navbarDropdown1')
+                                    li
+                                        a.dropdown-item(href='pdt-list.html', title='水質處理') 水質處理
+                                    li
+                                        a.dropdown-item(href='pdt-list.html', title='魚缸') 魚缸
+                            li.dropdown-submenu-toggle
+                                a.dropdown-item(href='pdt-list.html', title='園藝類') 園藝類
+                                ul.dropdown-submenu(aria-labelledby='navbarDropdown1')
+                                    li
+                                        a.dropdown-item(href='pdt-list.html', title='各式盆器') 各式盆器
+                                    li
+                                        a.dropdown-item(href='pdt-list.html', title='栽培介質') 栽培介質
+                            li.dropdown-submenu-toggle
+                                a.dropdown-item(href='pdt-list.html', title='人造傢飾類') 人造傢飾類
+                                ul.dropdown-submenu(aria-labelledby='navbarDropdown1')
+                                    li
+                                        a.dropdown-item(href='pdt-list.html', title='人造花飾') 人造花飾
+                                    li
+                                        a.dropdown-item(href='pdt-list.html', title='玻璃花器') 玻璃花器
+                    li.nav-item.dropdown.bg-danger
+                        a.nav-link(href='contact.html', title='聯絡我們')
+                            i.fa.fa-pencil-square-o.nav-icon(aria-hidden='true')
+                            span 聯絡我們
+                    li.nav-item.dropdown.bg-danger
+                        div(data-toggle='dropdown', aria-haspopup='true', aria-expanded='false', data-display='static')
+                            a.nav-link.dropdown-toggle(href='javascript:void(0)', title='搜尋產品')
+                                i.fa.fa-search.nav-icon(aria-hidden='true')
+                                span 搜尋產品
+                        .dropdown-menu.dropdown-menu-right
+                            .input-group.shadow-light.rounded-sm.input-addon
+                                input.form-control.py-4(type='text', placeholder='請輸入搜尋字串', aria-describedby='basic-addon21')
+                                .input-group-append
+                                    .input-group-text.bg-danger
+                                        i.fa.fa-search.text-white(aria-hidden='true')

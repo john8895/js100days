@@ -1,0 +1,242 @@
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote, pre, form, fieldset, table, th, td {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.float-right {
+  float: right;
+}
+
+/* =============================================
+-------------  18.Product.html (Single) ---------
+==============================================*/
+.zoomWindowContainer > div {
+  border: 1px solid #eaeaea;
+}
+
+.product-gallery-container {
+  margin-bottom: 40px;
+}
+
+.product-details {
+  margin-bottom: 60px;
+}
+.product-details .separator {
+  margin: 0 9px;
+}
+
+@media (min-width: 992px) {
+  .product-gallery-container {
+    margin-bottom: 65px;
+  }
+}
+.product-gallery-container .product-top {
+  position: relative;
+  margin-bottom: 0;
+}
+.product-gallery-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.product-gallery a {
+  display: block;
+  border: 2px solid #E8E8E8;
+  border-radius: 15px;
+  padding: 6px;
+}
+.product-gallery a:hover {
+  opacity: 0.8;
+}
+
+.product-gallery-wrapper {
+  margin-top: 6px;
+}
+
+.product-gallery-container .product-box {
+  position: absolute;
+  left: 17px;
+  top: 17px;
+  font-size: 16px;
+  line-height: 70px;
+  min-width: 70px;
+}
+.product-gallery-container .product-box.top-right {
+  left: auto;
+  right: 17px;
+}
+.product-gallery-container .product-box.bottom-right {
+  top: auto;
+  left: auto;
+  right: 17px;
+  bottom: 17px;
+}
+.product-gallery-container .product-box.bottom-left {
+  right: auto;
+  left: 17px;
+  top: auto;
+  bottom: 17px;
+}
+.product-gallery-container .product-box.outofstock-box {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 27.5px 0;
+  min-width: 95px;
+  left: 50%;
+  top: 50%;
+  margin-top: -47.5px;
+  margin-left: -47.5px;
+}
+
+.product-details .product-title {
+  font-size: 24px;
+  line-height: 1.3;
+  font-family: "Lato", Verdana;
+  color: #0054A5;
+  font-weight: 700;
+  margin-top: 5px;
+  margin-bottom: 17px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 17px;
+}
+.product-details .product-cats {
+  margin-bottom: 2px;
+}
+.product-details .product-cats a {
+  font-size: 13px;
+  font-weight: 400;
+  font-family: "Open Sans", Verdana;
+  color: #9a9a9a;
+}
+.product-details .product-ratings-container {
+  margin-bottom: 22px;
+  font-size: 0;
+}
+.product-details .product-ratings {
+  margin-bottom: 0;
+  display: inline-block;
+  margin-right: 14px;
+}
+.product-details .product-ratings-count, .product-details .product-ratings-add, .product-details .separator {
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 500;
+}
+.product-details .product-ratings-add {
+  color: #f44336;
+}
+.product-details .product-ratings-add:hover, .product-details .product-ratings-add:focus {
+  text-decoration: underline;
+}
+.product-details p {
+  margin: 0 0 20px;
+}
+.product-details .product-price-container {
+  margin-bottom: 10px;
+}
+.product-details .product-old-price, .product-details .product-price {
+  line-height: 60px;
+}
+.product-details .product-old-price {
+  font-weight: 400;
+  font-size: 18px;
+}
+.product-details .product-price {
+  font-size: 24px;
+  font-weight: 700;
+  margin-left: 7px;
+}
+.product-details label.input-desc {
+  font-size: 14px;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+.product-details .filter-size-container, .product-details .filter-color-container {
+  margin-bottom: 12px;
+}
+
+.product-quantity-wrapper {
+  margin-top: -4px;
+  margin-bottom: 24px;
+}
+
+.product-quantity {
+  max-width: 130px;
+}
+.product-quantity .input-group .form-control {
+  text-align: center;
+}
+
+.product-quantity-wrapper .input-group {
+  margin-bottom: 0;
+}
+
+.product-details .product-action {
+  padding: 16px 0;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 22px;
+}
+.product-details .product-action .btn + .btn {
+  margin-left: 13px;
+}
+.product-details .product-action i {
+  margin-right: 8px;
+}
+.product-details .share-container label.input-desc {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+.share-container .social-icons {
+  display: inline-block;
+  vertical-align: middle;
+}
+.share-container .social-icons .social-icon {
+  margin-bottom: 0;
+}
+.share-container .social-icons-bg .social-icon {
+  min-width: 32px;
+  padding: 7px 6.5px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@media (max-width: 380px) {
+  .product-details .product-action .btn.min-width {
+    min-width: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .product-details .product-action .btn + .btn {
+    margin-left: 5px;
+  }
+  .product-details .share-container label.input-desc {
+    display: block;
+    margin-bottom: 8px;
+  }
+}
+@media (min-width: 600px) and (max-width: 991px) {
+  .product-gallery-container {
+    max-width: 480px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

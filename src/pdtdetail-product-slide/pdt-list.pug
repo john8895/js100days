@@ -1,0 +1,42 @@
+extends include/_layout
+block content
+    main.main-wrapper.home
+        section.pageTitleSection
+            .container
+                .pageTitleInfo
+                    h2 產品資訊
+                    ol.breadcrumb
+                        li
+                            a(href='index.html') 首頁
+                        li.active 產品資訊
+        section.mainContent.full-width.clearfix.productSection.bg-3
+            .pt-10.pb-7
+                .container
+                    .row
+                        .col-md-8.col-lg-9.order-md-1
+                            .row
+                                .col-md-12
+                                    .webeditor
+                                        p
+                                            | 此處為文字編輯器，您可透過後台管理系統自由編輯這個區塊中的內容，管理系統的圖文編輯器功能十分強大，可以對文字格式做粗體、斜體、編號、縮排等，也可以改變字體、字型大小、行高，排版置中、靠左或靠右，以及插入連結、圖片、表格、影片、表情符號等一應俱全，您可自行更改或調整此一區塊中的內容，不須假手他人，如有任何問題，歡迎洽詢首岳資訊客服，我們將竭誠為您服務。
+                            .row
+                                -var itemCount = 1
+                                -for (var i = 1; i <= 9; i++)
+                                    -itemCount = itemCount > 3 ? itemCount = 1 : itemCount
+                                    +pdtList__item('產品名稱 ' + i,'img/p' + itemCount + '.jpg')
+                                    -itemCount++
+                            section.py-5
+                                .container
+                                    // 分頁
+                                    .jh-pagination-wraper
+                                        .pagination
+                                            form#searchFormPage(name='searchFormPage', method='GET')
+                                                ul.pagination-numbers
+                                                    li
+                                                        a.active(href='pdt-list.html') 1
+                                                    li
+                                                        a(href='pdt-list.html') 2
+                                                    li
+                                                        a(href='pdt-list.html') 3
+                        .col-md-4.col-lg-3
+                            include include/_pdt_aside

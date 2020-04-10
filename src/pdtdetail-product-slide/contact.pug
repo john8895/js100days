@@ -1,0 +1,83 @@
+extends include/_layout
+block content
+    main.main-wrapper.home
+        section.pageTitleSection
+            .container
+                .pageTitleInfo
+                    h2 聯絡我們
+                    ol.breadcrumb
+                        li
+                            a(href='index.html') 首頁
+                        li 聯絡我們
+        section.py-8.py-md-10
+            .container
+                .mb-9
+                    .webeditor
+                        .row
+                            .col-md-4.col-xs-12
+                                .media.flex-md-column.flex-lg-row.mb-4
+                                    .icon-rounded-circle-large.shadow-sm.mb-md-2.mr-md-0.mr-2.mr-lg-2.bg-warning
+                                        i.fa.fa-map-marker.text-white(aria-hidden='true')
+                                            input(type="hidden")  
+                                    .media-body
+                                        h3.media-heading.text-warning.mt-0.font-weight-bold.mb-3 公司地址：
+                                        p.text-muted.font-weight-medium 彰化縣花壇鄉花橋街19號
+                            .col-md-4.col-xs-12
+                                .media.flex-md-column.flex-lg-row.mb-6
+                                    .icon-rounded-circle-large.shadow-sm.mr-2.mb-md-2.mr-md-0.mr-lg-2.bg-success
+                                        i.fa.fa-phone.text-white(aria-hidden='true')
+                                            input(type="hidden")  
+                                    .media-body
+                                        h3.media-heading.text-success.mt-0.font-weight-bold.mb-3 聯絡電話：
+                                        a.text-muted.font-weight-medium(href='')
+                                            | 04-7880258
+                                        br
+                                        a.text-muted.font-weight-medium(href='')
+                                            | 傳真：04-7880255
+                            .col-md-4.col-xs-12
+                                .media.flex-md-column.flex-lg-row.mb-3.mb-md-0
+                                    .icon-rounded-circle-large.shadow-sm.mr-2.mb-md-2.mr-md-0.mr-lg-2.bg-danger
+                                        i.fa.fa-envelope-o.text-white(aria-hidden='true')
+                                            input(type="hidden")  
+                                    .media-body
+                                        h3.media-heading.text-danger 聯絡信箱
+                                        p.font-weight-medium
+                                            a.text-muted(href='mailto:flower001100@gmail.com') flower001100@gmail.com
+                .map-jh
+                    .webeditor
+                        iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.3167062904377!2d120.55401611498648!3d24.019894484457247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693820aec513b5%3A0x526da85005b536f8!2zNTAz5b2w5YyW57ij6Iqx5aOH6YSJ6Iqx5qmL6KGXMTnomZ8!5e0!3m2!1szh-TW!2stw!4v1570262979608!5m2!1szh-TW!2stw', width='100%', height='420', frameborder='0', style='border:0;', allowfullscreen='')
+                div(action='index.html', method='post')
+                    form
+                        .row
+                            .col-sm-6.col-xs-12
+                                .form-group.form-group-icon
+                                    i.fa.fa-user
+                                        span(style='display: none;')  
+                                    input.form-control.border-warning(type='text', placeholder='姓名', required='')
+                            .col-sm-6.col-xs-12
+                                .form-group.form-group-icon
+                                    i.fa.fa-envelope
+                                        span(style='display: none;')  
+                                    input.form-control.border-success(type='email', placeholder='Email', required='')
+                            .col-sm-6.col-xs-12
+                                .form-group.form-group-icon
+                                    i.fa.fa-phone
+                                        span(style='display: none;')  
+                                    input.form-control.border-purple(type='text', placeholder='電話', required='')
+                            .col-sm-6.col-xs-12
+                                .form-group.form-group-icon
+                                    i.fa.fa-book
+                                        span(style='display: none;')  
+                                    input.form-control.border-pink(type='text', placeholder='主旨', required='')
+                            .col-12
+                                .form-group.form-group-icon
+                                    i.fa.fa-comments
+                                        span(style='display: none;')  
+                                    textarea.form-control.border-info(placeholder='留下寶貴意見', rows='6')
+                            .col-12
+                                .form-group.iamnotrobot
+                                    img(src='img/captcha-tw.png',alt='')
+                            .col-12
+                                .text-sm-center.mt-6
+                                    button.btn.btn-danger.text-uppercase(type='submit')
+                                        | 送出訊息

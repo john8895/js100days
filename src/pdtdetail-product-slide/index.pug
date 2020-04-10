@@ -1,0 +1,124 @@
+extends include/_layout
+block content
+    main.main-wrapper.home
+            #rev_slider_wrapper.slider-container8.rev_slider_wrapper.rev_container_1.fullwidthbanner-container(data-alias='classicslider1')
+                #rev_slider.rev_slider.fullwidthabanner(style='display:none;')
+                    ul
+                        +index__bannerItem('1','img/b1.jpg','魔力紅寵物、園藝、水族用品專賣','★ 服務最貼心 / ★ 到貨最迅速 / ★ 貨品最豐富','left')
+                        +index__bannerItem('2','img/b2.jpg','魔力紅寵物、園藝、水族用品專賣','★ 服務最貼心 / ★ 到貨最迅速 / ★ 貨品最豐富','right')
+                        +index__bannerItem('3','img/b3.jpg','魔力紅寵物、園藝、水族用品專賣','★ 服務最貼心 / ★ 到貨最迅速 / ★ 貨品最豐富','left')
+                    .tp-bannertimer.tp-bottom(style='height: 4px; background-color: rgba(255, 255, 255, 0.5);')
+            section.d-none.d-sm-block.mtn-50.index__sec-category
+                .container
+                    .row.wow.fadeInUp
+                        .col-sm-3
+                            a(href='pdt-list.html', title='寵物類')
+                            .card.bg-warning.card-hover.scrolling
+                                a(href='pdt-list.html', title='寵物類')
+                                .card-body.text-center.p-0
+                                    a(href='pdt-list.html', title='寵物類')
+                                        .card-icon-border-large.border-warning
+                                            img.icon(src='img/icon-pets.svg')
+                                        h2.text-white.pt-6.mb-0.title 寵物類
+                                        h5.sec-title.mb-4 pets
+                                    a.btn-scroll-down.d-block.pb-4(href='pdt-list.html', title='寵物類')
+                                        i.fa.fa-chevron-down(aria-hidden='true')
+                                            span(style='display: none;')  
+                        .col-sm-3
+                            a(href='pdt-list.html', title='水族類')
+                            .card.bg-info.card-hover.scrolling
+                                a(href='pdt-list.html', title='水族類')
+                                .card-body.text-center.p-0
+                                    a(href='pdt-list.html', title='水族類')
+                                        .card-icon-border-large.border-info
+                                            img.icon(src='img/icon-fish.svg')
+                                        h2.text-white.pt-6.mb-0.title 水族類
+                                        h5.sec-title.mb-4 Aquarium
+                                    a.btn-scroll-down.d-block.pb-4(href='pdt-list.html', title='水族類')
+                                        i.fa.fa-chevron-down(aria-hidden='true')
+                                            span(style='display: none;')  
+                        .col-sm-3
+                            a(href='pdt-list.html', title='園藝類')
+                            .card.bg-success.card-hover.scrolling
+                                a(href='pdt-list.html', title='園藝類')
+                                .card-body.text-center.p-0
+                                    a(href='pdt-list.html', title='園藝類')
+                                        .card-icon-border-large.border-success
+                                            img.icon(src='img/icon-garden.svg')
+                                        h2.text-white.pt-6.mb-0.title 園藝類
+                                        h5.sec-title.mb-4 gardening
+                                    a.btn-scroll-down.d-block.pb-4(href='pdt-list.html', title='園藝類')
+                                        i.fa.fa-chevron-down(aria-hidden='true')
+                                            span(style='display: none;')  
+                        .col-sm-3
+                            a(href='pdt-list.html', title='人造傢飾類')
+                            .card.bg-danger.card-hover.scrolling
+                                a(href='pdt-list.html', title='人造傢飾類')
+                                .card-body.text-center.p-0
+                                    a(href='pdt-list.html', title='人造傢飾類')
+                                        .card-icon-border-large.border-danger
+                                            img.icon(src='img/icon-home.svg')
+                                        h2.text-white.pt-6.mb-0.title 人造傢飾類
+                                        h5.sec-title.mb-4 Home decoration
+                                    a.btn-scroll-down.d-block.pb-4(href='pdt-list.html', title='人造傢飾類')
+                                        i.fa.fa-chevron-down(aria-hidden='true')
+                                            span(style='display: none;')  
+            section.py-8
+                .container
+                    .section-title.justify-content-center.mb-4.mb-md-6.wow.fadeInUp
+                        h2 最新產品
+                    .row.wow.fadeInUp
+                        - var productItemCount=1
+                        - for(var i=1;i<=4;i++)
+                            - if(productItemCount>=4)
+                                - productItemCount =1
+                            +index__products('產品名稱 '+i,`img/p${productItemCount}.jpg`)
+                            - productItemCount++
+            section.py-10.bg-parallax(style='background-image: url(img/bg-1.jpg);')
+                .container
+                    .wow.fadeInUp
+                        .webeditor
+                            .section-title.justify-content-center.mb-3
+                                h2.text-white.text-center 魔力紅寵物、園藝、水族用品專賣
+                            .text-center
+                                .row
+                                    .col-md-8.offset-md-2
+                                        p.text-white.font-size-18.mb-0
+                                            | 要了解園藝.水族.寵物的樂趣.其中奧祕需實際的體驗.才能體會.也才能樂生活；愛花草.愛水族.愛寵物更愛拈花惹草.每一次的新發現.都讓人心情愉悅.
+                                            | 蒔花弄草.盡在魔力紅寵物.園藝.水族用品專賣～本公司商品最齊全.所有狗狗.貓咪及小動物的配備.食.衣.住.行.育.樂我們都有啦!
+                                            | 還有花草園藝.各式商品.趕快來享受慢活的田園生活
+                                        a.btn.btn-danger.shadow-sm.text-uppercase.mt-4.mb-0(title='了解更多', href='contact.html')
+                                            i.fa.fa-phone.mr-2(aria-hidden='true')
+                                                input(type="hidden")
+                                            |                                     了解更多
+            section.pt-9.pb-2.bg-light(style='background-image: url(img/bg-2.png);')
+                .webeditor
+                    .container
+                        .section-title.justify-content-center.mb-2.mb-md-8.wow.fadeInUp
+                            h2 合作品牌
+                        .team-slider.owl-carousel.owl-theme.wow.fadeInUp(dir='ltr')
+                            .card.card-hover.card-transparent.shadow-none.slide-item
+                                .card-img-wrapper.position-relative.shadow-sm.rounded-circle.mx-auto
+                                    img.card-img-top.rounded-circle(src='img/logo1.jpg', alt='carousel-img')
+                                .card-body.text-center
+                                    a.font-size-20.font-weight-medium.d-block(href='', title='品牌名稱') 品牌名稱
+                            .card.card-hover.card-transparent.shadow-none.slide-item
+                                .card-img-wrapper.position-relative.shadow-sm.rounded-circle.mx-auto
+                                    img.card-img-top.rounded-circle(src='img/logo2.jpg', alt='carousel-img')
+                                .card-body.text-center
+                                    a.font-size-20.font-weight-medium.d-block(href='', title='品牌名稱') 品牌名稱
+                            .card.card-hover.card-transparent.shadow-none.slide-item
+                                .card-img-wrapper.position-relative.shadow-sm.rounded-circle.mx-auto
+                                    img.card-img-top.rounded-circle(src='img/logo3.jpg', alt='carousel-img')
+                                .card-body.text-center
+                                    a.font-size-20.font-weight-medium.d-block(href='', title='品牌名稱') 品牌名稱
+                            .card.card-hover.card-transparent.shadow-none.slide-item
+                                .card-img-wrapper.position-relative.shadow-sm.rounded-circle.mx-auto
+                                    img.card-img-top.rounded-circle(src='img/logo1.jpg', alt='carousel-img')
+                                .card-body.text-center
+                                    a.font-size-20.font-weight-medium.d-block(href='', title='品牌名稱') 品牌名稱
+                            .card.card-hover.card-transparent.shadow-none.slide-item
+                                .card-img-wrapper.position-relative.shadow-sm.rounded-circle.mx-auto
+                                    img.card-img-top.rounded-circle(src='img/logo2.jpg', alt='carousel-img')
+                                .card-body.text-center
+                                    a.font-size-20.font-weight-medium.d-block(href='', title='品牌名稱') 品牌名稱

@@ -1,0 +1,174 @@
+extends include/_layout
+block content
+    main.main-wrapper.home.page__pdtDetails
+        section.pageTitleSection
+            .container
+                .pageTitleInfo
+                    h2 產品名稱
+                    ol.breadcrumb
+                        li
+                            a(href='index.html') 首頁
+                        li
+                            a(href='pdt-list.html') 產品資訊
+                        li.active 產品名稱
+        section.mainContent.full-width.clearfix.productSection
+            .pt-10
+                .container
+                    .row
+                        .col-lg-12.col-xl-9.order-xl-1
+                            .row
+                                .col-sm-12.col-md-7.col-lg-7
+                                    .product-gallery-container
+                                        .product-top
+                                            img#product-zoom(src='img/product1.jpg',
+                                                data-zoom-image='img/product1.jpg', alt='Product Name 1')
+                                        .product-gallery-wrapper
+                                            .owl-carousel.product-gallery.product-gallery-sm
+                                                - var proCount = 1
+                                                - for(var i=1;i<=5;i++)
+                                                    -if(proCount===4)
+                                                        - proCount=1
+                                                    +pdtDetails__productsSlide(`img/product${proCount}.jpg`)
+                                                    - proCount++
+                                .col-sm-12.col-md-5.col-lg-5
+                                    .product-single
+                                        .clearfix.mt
+                                        h2.mb-3.title 產品名稱
+                                        .scancode-num
+                                            | 條碼編號：
+                                            span ABC123456789
+                                        p.font-size-15.mb-5
+                                            | 此處為產品敘述示意，以下內容為假文假字，非網站正式呈現
+                                            br
+                                            br
+                                            |                                         68*43*19cm顏色:磚紅.深咖啡
+                                            br
+                                            |                                         大菜槽、有機蔬菜均適用.堆肥箱.多種用途
+                                            br
+                                            |                                         登記字號：肥進輔字第0209005號
+                                            br
+                                            |                                         肥料品目：7-03有機培介質
+                                            br
+                                            |                                         性狀：固態.粉狀
+                                            br
+                                            |                                         容量：10公斤
+                                            br
+                                            |                                         登記成分：有機質58.3%、全氮1.0%、全磷酐0.8%、全氧化鉀0.9%、pH62、導電度1.5ds/m、水分8%以下
+                                        .img-barcode
+                                            img(src='img/barcode.gif', alt='')
+                            .clearfix.mb-5
+                            .text-center.mt-6.mb-5
+                                a.btn.btn-danger.text-uppercase(href='javascript:history.back()') 回產品列表
+                            .clearfix.mt
+                            .pdt-details-tab
+                                ul#pills-tab.nav.nav-pills(role='tablist')
+                                    li.nav-item
+                                        a#content_tab1.nav-link.active(data-toggle='pill',
+                                            href='#webeditor_tab1',
+                                            role='tab', aria-controls='pills-home', aria-selected='true') 產品頁籤 A
+                                    li.nav-item
+                                        a#content_tab2.nav-link(data-toggle='pill', href='#webeditor_tab2',
+                                            role='tab', aria-controls='pills-profile', aria-selected='false') 產品頁籤 B
+                                    li.nav-item
+                                        a#content_tab3.nav-link(data-toggle='pill', href='#webeditor_tab3',
+                                            role='tab', aria-controls='pills-profile', aria-selected='false') 產品頁籤 C
+                                #pills-tabContent.tab-content.border-top-3.border-danger
+                                    #webeditor_tab1.tab-pane.fade.show.active.px-5.py-6.bg-light.webeditor(role='tabpanel', aria-labelledby='pills-home-tab')
+                                        .webeditor
+                                            p
+                                                | 此處為產品敘述示意，以下內容為假文假字，非網站正式呈現
+                                                br
+                                                br
+                                                |                                         68*43*19cm顏色:磚紅.深咖啡
+                                                br
+                                                |                                         大菜槽、有機蔬菜均適用.堆肥箱.多種用途
+                                                br
+                                                |                                         登記字號：肥進輔字第0209005號
+                                                br
+                                                |                                         肥料品目：7-03有機培介質
+                                                br
+                                                |                                         性狀：固態.粉狀
+                                                br
+                                                |                                         容量：10公斤
+                                                br
+                                                |                                         登記成分：有機質58.3%、全氮1.0%、全磷酐0.8%、全氧化鉀0.9%、pH62、導電度1.5ds/m、水分8%以下
+                                    #webeditor_tab2.tab-pane.fade.px-5.py-6.bg-light.webeditor(role='tabpanel',
+                                        aria-labelledby='pills-profile-tab')
+                                        .webeditor
+                                            p
+                                                | 此處為產品敘述示意，以下內容為假文假字，非網站正式呈現
+                                                br
+                                                br
+                                                |                                         68*43*19cm顏色:磚紅.深咖啡
+                                                br
+                                                |                                         大菜槽、有機蔬菜均適用.堆肥箱.多種用途
+                                                br
+                                                |                                         性狀：固態.粉狀
+                                                br
+                                                |                                         容量：10公斤
+                                                br
+                                                |                                         登記成分：有機質58.3%、全氮1.0%、全磷酐0.8%、全氧化鉀0.9%、pH62、導電度1.5ds/m、水分8%以下
+                                    #webeditor_tab3.tab-pane.fade.px-5.py-6.bg-light.webeditor(role='tabpanel',
+                                        aria-labelledby='pills-profile-tab')
+                                        .webeditor
+                                            p
+                                                | 此處為產品敘述示意，以下內容為假文假字，非網站正式呈現
+                                                br
+                                                br
+                                                |                                         68*43*19cm顏色:磚紅.深咖啡
+                                                br
+                                                |                                         大菜槽、有機蔬菜均適用.堆肥箱.多種用途
+                                                br
+                                                |                                         性狀：固態.粉狀
+                                                br
+                                                |                                         容量：10公斤
+                                                br
+                                                |                                         登記成分：有機質58.3%、全氮1.0%、全磷酐0.8%、全氧化鉀0.9%、pH62、導電度1.5ds/m、水分8%以下
+                        .clearfix.mt
+                        .col-lg-12.col-xl-3.mt-5
+                            include include/_pdt_aside
+                .pt-9.mt-9.pb-8.border-top-1.bg-light(style='background-image: url(img/bg-2.png);')
+                    .container
+                        .section-title.justify-content-center.mb-4.mb-md-6.wow.fadeInUp(style='visibility: visible; animation-name: fadeInUp;')
+                            h2 相關產品
+                        .team-slider.owl-carousel.owl-theme.wow.fadeInUp(dir='ltr')
+                            .card.card-product.border-lightgray.border-danger-hover.card-hover
+                                a.img-link(href='pdt-details.html')
+                                    img.img-fluid.img-in-ie(src='img/p1.jpg')
+                                .pdt-list-item.card-body.bg-danger-hover.px-4.py-5.text-center
+                                    h5.mb-3.index__product__title
+                                        a(href='pdt-details.html') 寵物各式籠具
+                                    a.btn.btn-sm.btn-white.text-hover-danger.text-uppercase.d-inline-block(href='pdt-details.html')
+                                        | 了解更多
+                            .card.card-product.border-lightgray.border-danger-hover.card-hover
+                                a.img-link(href='pdt-details.html')
+                                    img.img-fluid.img-in-ie(src='img/p2.jpg')
+                                .pdt-list-item.card-body.bg-danger-hover.px-4.py-5.text-center
+                                    h5.mb-3.index__product__title
+                                        a(href='pdt-details.html') 產品名稱
+                                    a.btn.btn-sm.btn-white.text-hover-danger.text-uppercase.d-inline-block(href='pdt-details.html')
+                                        | 了解更多
+                            .card.card-product.border-lightgray.border-danger-hover.card-hover
+                                a.img-link(href='pdt-details.html')
+                                    img.img-fluid.img-in-ie(src='img/p3.jpg')
+                                .pdt-list-item.card-body.bg-danger-hover.px-4.py-5.text-center
+                                    h5.mb-3.index__product__title
+                                        a(href='pdt-details.html') 產品名稱
+                                    a.btn.btn-sm.btn-white.text-hover-danger.text-uppercase.d-inline-block(href='pdt-details.html')
+                                        | 了解更多
+                            .card.card-product.border-lightgray.border-danger-hover.card-hover
+                                a.img-link(href='pdt-details.html')
+                                    img.img-fluid.img-in-ie(src='img/p1.jpg')
+                                .pdt-list-item.card-body.bg-danger-hover.px-4.py-5.text-center
+                                    h5.mb-3.index__product__title
+                                        a(href='pdt-details.html') 產品名稱
+                                    a.btn.btn-sm.btn-white.text-hover-danger.text-uppercase.d-inline-block(href='pdt-details.html')
+                                        | 了解更多
+                            .card.card-product.border-lightgray.border-danger-hover.card-hover
+                                a.img-link(href='pdt-details.html')
+                                    img.img-fluid.img-in-ie(src='img/p2.jpg')
+                                .pdt-list-item.card-body.bg-danger-hover.px-4.py-5.text-center
+                                    h5.mb-3.index__product__title
+                                        a(href='pdt-details.html') 產品名稱
+                                    a.btn.btn-sm.btn-white.text-hover-danger.text-uppercase.d-inline-block(href='pdt-details.html')
+                                        | 了解更多

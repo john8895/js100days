@@ -1,0 +1,7 @@
+//- pdt-details 產品輪播
+//- -----------------------------------------
+mixin productsSlide(imgUrl)
+    a.product-gallery-item(href='javascript: void(0)',
+        data-image=imgUrl,
+        data-zoom-image=imgUrl)
+        img(src=imgUrl, alt='ProductName')
