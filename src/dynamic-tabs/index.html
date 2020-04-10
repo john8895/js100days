@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8">
+    <title>JQuery Dynamic Tabs</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="readme">
+      <h1 class="readme__title">JQuery Dynamic Tabs</h1>
+      <pre>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"&gt;&lt;/script&gt;
+
+$(function () {
+    $('.tab li').click(function () {
+        $(this).addClass('active').siblings().removeClass('active');
+        let index = $(this).index();
+        $('.main-content-item').eq(index).addClass('selected').siblings().removeClass('selected')
+    })
+})</pre><br>
+      <hr>
+    </div>
+    <div class="wrap">
+      <ul class="tab">
+        <li class="tab-item active"><a href="javascript:void(0)">Home</a></li>
+        <li class="tab-item"><a href="javascript:void(0)">Menu1</a></li>
+        <li class="tab-item"><a href="javascript:void(0)">Menu2</a></li>
+        <li class="tab-item"><a href="javascript:void(0)">Menu3</a></li>
+      </ul>
+      <div class="main-content">
+        <div class="main-content-item selected">
+          <h4>HOME</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto, at atque consequuntur corporis deleniti dolore eos est et expedita fugiat nisi odit omnis placeat quam quod reprehenderit sint voluptatum!</p>
+        </div>
+        <div class="main-content-item">
+          <h4>Menu1</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto, at atque consequuntur corporis deleniti dolore eos est et expedita fugiat nisi odit omnis placeat quam quod reprehenderit sint voluptatum!</p>
+        </div>
+        <div class="main-content-item">
+          <h4>Menu2</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto, at atque consequuntur corporis deleniti dolore eos est et expedita fugiat nisi odit omnis placeat quam quod reprehenderit sint voluptatum!</p>
+        </div>
+        <div class="main-content-item">
+          <h4>Menu3</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto, at atque consequuntur corporis deleniti dolore eos est et expedita fugiat nisi odit omnis placeat quam quod reprehenderit sint voluptatum!</p>
+        </div>
+      </div>
+    </div>
+    <script src="../../js/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+          $('.tab li').click(function () {
+              $(this).addClass('active').siblings().removeClass('active');
+              let index = $(this).index();
+              $('.main-content-item').eq(index).addClass('selected').siblings().removeClass('selected')
+          })
+      })
+    </script>
+  </body>
+</html>
