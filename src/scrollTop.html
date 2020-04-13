@@ -16,16 +16,7 @@
             background-color: deeppink;
             position: relative;
         }
-        #bottom {
-            left: 0;
-            top: 0;
-            position: fixed;
-        }
-        #top {
-            right: 30px;
-            bottom: 0;
-            position: absolute;
-        }
+
 
         body {
             padding: 0 0 2500px;
@@ -33,37 +24,21 @@
     </style>
 </head>
 <body>
-<!--<div class="wrap">-->
-<!--<div id="dv" class="dv">-->
 <input type="button" value="向上" id="top">
+<br>
 <input type="button" value="向下" id="bottom">
-<!--</div>-->
-<!--</div>-->
 <script>
-    window.onscroll = function () {
-        // console.log(document.documentElement.scrollTop);
-    }
     var top = document.getElementById('top');
     var bottom = document.getElementById('bottom');
-    // var dv = document.getElementById('dv');
-    // console.log(dv.scrollTop);
-    // dv.onscroll(function () {
-    //
-    // })
-    top.onclick = function () {
-        // document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-    bottom.onclick = function () {
-        // console.log(document.body.scrollTop);
-        // console.log(document.body.scrollHeight);
-        var scroll = document.body.scrollHeight;
-        // scroll = dv.scrollHeight;
-        //
-        // document.body.scrollTop = scroll;
-        document.documentElement.scrollTop = document.body.scrollHeight;
-        // console.log(document.body.scrollTop);
 
+    top.onclick = function () {
+        console.log('top');
+        document.documentElement.scrollTop = 0;
+    };
+
+    bottom.onclick = function () {
+        console.log('bottom');
+        document.documentElement.scrollTop = document.body.scrollHeight;
     }
 
 
