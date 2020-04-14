@@ -12,36 +12,55 @@
         }
 
         .dv {
-            padding: 0 0 600px;
+            padding: 0 0 2500px;
             background-color: deeppink;
             position: relative;
         }
 
 
-        body {
-            padding: 0 0 2500px;
+        /*body {*/
+        /*    padding: 0 0 2500px;*/
+        /*}*/
+
+        #goTop {
+            position: absolute;
+            bottom: 0;
+            right: 0;
         }
+        #goBottom {
+
+        }
+
+
     </style>
 </head>
 <body>
-<input type="button" value="向上" id="top">
-<br>
-<input type="button" value="向下" id="bottom">
-<script>
-    var top = document.getElementById('top');
-    var bottom = document.getElementById('bottom');
+<div class="wrap" id="wrapDiv">
+    <div class="dv" id="dv">
+        <input type="button" value="向上" id="goTop">
+        <input type="button" value="向下" id="goBottom">
+    </div>
+</div>
 
-    top.onclick = function () {
-        console.log('top');
-        document.documentElement.scrollTop = 0;
+<script>
+    var goTop = document.getElementById('goTop');
+    var goBottom = document.getElementById('goBottom');
+    var dv = document.getElementById('wrapDiv');
+
+    goTop.onclick = function () {
+        dv.scrollTop = 0;
     };
 
-    bottom.onclick = function () {
-        console.log('bottom');
-        document.documentElement.scrollTop = document.body.scrollHeight;
+    goBottom.onclick = function () {
+        dv.scrollTop = dv.scrollHeight;
+
     }
-
-
+    dv.addEventListener('scroll',function () {
+        console.log(dv.scrollTop);
+        // if(dv.scrollTop<dv.scrollHeight){
+        //
+        // }
+    })
 </script>
 </body>
 </html>
