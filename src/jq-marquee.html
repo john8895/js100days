@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Marquee 跑馬燈</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 20px 20px 0;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .header-marquee-wrap {
+            border: 1px solid red;
+            overflow: hidden;
+            height: 20px;
+        }
+
+        .header-marquee-bd {
+            position: relative;
+            /*background-color: blue;*/
+        }
+        .description {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<h1>JQuery Marquee 跑馬燈</h1>
+<hr>
+<br>
+<div class="header-marquee-wrap">
+    <ul class="header-marquee-bd" id="headerMarquee">
+        <li><a href="javascript:void(0)">1 此處為跑馬燈示意文字，用來充當未來版面文字的字串</a></li>
+        <li><a href="javascript:void(0)">2 此處為跑馬燈示意文字，用來充當未來版面文字的字串</a></li>
+        <li><a href="javascript:void(0)">3 此處為跑馬燈示意文字，用來充當未來版面文字的字串</a></li>
+        <li><a href="javascript:void(0)">4 此處為跑馬燈示意文字，用來充當未來版面文字的字串</a></li>
+        <li><a href="javascript:void(0)">5 此處為跑馬燈示意文字，用來充當未來版面文字的字串</a></li>
+        <li><a href="javascript:void(0)">6 此處為跑馬燈示意文字，用來充當未來版面文字的字串</a></li>
+    </ul>
+</div>
+
+<div class="description">
+    <p>
+        用ul及li組成的 JQuery 跑馬燈，往上推切換，當跑到最後一項時，會出現滾動動畫移至第一項重新播放；滑鼠移入會停止播放，滑鼠移開繼續播放。
+    </p>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        marqueeRoll(); // header跑馬燈
+        // header跑馬燈
+        function marqueeRoll() {
+            let marquee = $("#headerMarquee");
+            let count = 0;
+            //一開始先跑一次
+            marqueeHandle();
+            //定時器
+            let timeId = setInterval(marqueeHandle, 1000);
+
+            //跑馬燈控制
+            function marqueeHandle() {
+                // 取得li的高度
+                let childHeight = marquee.children().eq(0).height();
+                // 如果步數大於ul總高-一個li高度
+                if (count > marquee.height() - childHeight) {
+                    count = 0;
+                    //讓ul動畫往下跑，歸零
+                    marquee.animate({
+                        bottom: "0"
+                    }, 500);
+                }
+                // 每次移動一個li的高度
+                marquee.css("bottom", count + 'px');
+                count += childHeight;
+            }
+
+            //滑鼠移入停止計時器，移出繼續計時器，如果用mouseover滑鼠穿過被選或子元素會多次觸發
+            marquee.mouseenter(function () {
+                clearInterval(timeId);
+            });
+            marquee.mouseleave(function () {
+                timeId = setInterval(marqueeHandle, 1000);
+            });
+        }
+    });
+</script>
+</body>
+</html>

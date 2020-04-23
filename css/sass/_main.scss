@@ -4,9 +4,11 @@ body {
     font-family: "Microsoft JhengHei";
     background-color: #fff;
 }
+
 main {
-    margin-top: 100px;
+    margin-top: 30px;
 }
+
 .gobackBtn {
     @include btn;
     border: 1px solid #000;
@@ -52,16 +54,17 @@ pre {
     border-left: 8px solid #ccc;
 }
 
-//.container {
-//    margin: 0 90px;
-//    display: flex;
-//    height: 100%;
-//
-//    @include breakpoint(lg) {
-//        margin: 0 auto;
-//        max-width: 1440px;
-//    }
-//}
+
+/* index
+ * -------------------------
+ */
+.webComponent-wrap {
+
+    .sectionTitle {
+        font-size: 25px;
+    }
+}
+
 .sidebar {
     position: fixed;
     display: flex;
@@ -74,15 +77,16 @@ pre {
 }
 
 .content {
-    @include breakpoint(md) {
-        max-width: calc(100% - 220px);
-        margin-left: 220px;
-        width: 100%;
-        margin-top: 20px;
-    }
+    //@include breakpoint(md) {
+    //    max-width: calc(100% - 220px);
+    //    margin-left: 220px;
+    //    width: 100%;
+    //    margin-top: 20px;
+    //}
 
     .portfolioList {
-        margin: 45px 30px;
+        margin: 0 20px;
+        list-style-type: disc;
     }
 
     .index__postText {
@@ -97,7 +101,7 @@ pre {
 
     .post-title {
         line-height: 1.7;
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
@@ -126,6 +130,7 @@ pre {
             font-size: 42px;
         }
     }
+
     .tp-link {
         position: absolute;
         top: 380px;
