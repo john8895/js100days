@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll bear</title>
+    <style>
+        body {
+            padding-bottom: 5000px;
+            background-color: #FFE53B;
+            background-image: linear-gradient(334deg, #FFE53B 0%, #FF2525 24%, #457733 66%, #4c2df3 100%);
+
+        }
+
+        #dv {
+            position: relative;
+
+        }
+
+        #bear {
+            position: absolute;
+        }
+
+        #btn2 {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+
+        }
+        h1 {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<h1>Scroll bear</h1>
+<hr>
+<input type="button" value="開始追小熊" id="btn">
+<input type="button" value="開始找小熊" id="btn2">
+
+<div id="dv">
+    <img src="img/bear.png" alt="" id="bear">
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+<script>
+
+    $(function () {
+
+        let $body = $('html,body');
+
+        $('#btn').click(function () {
+
+            $('#bear').animate({
+                top: $body.height(),
+            }, 3000)
+            $body.animate({
+                scrollTop: $body.height(),
+            }, 8000)
+        })
+
+        $('#btn2').click(function () {
+
+            $('#bear').animate({
+                top: 0,
+            }, 600)
+
+            $body.animate({
+                scrollTop: 0,
+            }, 5000)
+        })
+
+
+    })
+
+</script>
+</body>
+</html>
