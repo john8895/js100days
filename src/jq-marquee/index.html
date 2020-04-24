@@ -52,6 +52,13 @@
     <p>
         用ul及li組成的 JQuery 跑馬燈，往上推切換，當跑到最後一項時，會出現滾動動畫移至第一項重新播放；滑鼠移入會停止播放，滑鼠移開繼續播放。
     </p>
+    <br>
+    <hr>
+    <br>
+    <p>
+        參考：<a href="https://evertrust.yungching.com.tw/" target="_blank">永慶房屋</a>
+        <img src="img/ref.png" alt="">
+    </p>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -64,7 +71,7 @@
             //一開始先跑一次
             marqueeHandle();
             //定時器
-            let timeId = setInterval(marqueeHandle, 1000);
+            let timeId = setInterval(marqueeHandle, 3500);
 
             //跑馬燈控制
             function marqueeHandle() {
@@ -79,7 +86,10 @@
                     }, 500);
                 }
                 // 每次移動一個li的高度
-                marquee.css("bottom", count + 'px');
+                // marquee.css("bottom", count + 'px');
+                marquee.animate({
+                    bottom: count+"px",
+                },450)
                 count += childHeight;
             }
 
@@ -88,7 +98,7 @@
                 clearInterval(timeId);
             });
             marquee.mouseleave(function () {
-                timeId = setInterval(marqueeHandle, 1000);
+                timeId = setInterval(marqueeHandle, 3500);
             });
         }
     });
