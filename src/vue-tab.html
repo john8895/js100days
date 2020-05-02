@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div id="app">
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a href="" class="nav-link" v-bind:class="{'active': link==='a'}" v-on:click.prevent="link = 'a'">title 1</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link" v-bind:class="{'active': link==='b'}" v-on:click.prevent="link = 'b'">title 2</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link" v-bind:class="{'active': link==='c'}" v-on:click.prevent="link = 'c'">title 3</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div v-if="link === 'a'" class="tab-pane" v-bind:class="{'active': link==='a'}">
+                <p>
+                    據《韓聯社》最新報導，北韓最高領導人金正恩神隱20日後，昨（1日）出席公開活動，還當場發表談話，似乎是為了近日有關他的諸多健康質疑現身闢謠。金正恩最金照片也跟著曝光，身後看板寫著5月1日，是為出席佐證。</p>
+
+                    朝鮮中央廣播電台今日表示，昨日金正恩出席順天磷肥廠竣工儀式，親自剪綵，他公開表示或父親、祖父等「偉大的首領和偉大的將軍」能在現場聽報告，一定會很開心。現場民眾直接高呼萬歲，金正恩則向群眾揮手致意。</p>
+
+                至於一度外傳要接班的金正恩胞妹金與正、北韓勞動黨副委員長樸奉珠、金德訓、樸泰成、黨第一副部長趙勇元等人，也都陪同金正恩一同出席，以消除外界傳言。</p>
+            </div>
+            <div v-else-if="link === 'b'" class="tab-pane" v-bind:class="{'active': link==='b'}">
+                <p>如果你有大量的鈔票，會選擇如何保存呢？有人會存銀行、拿去投資理財，也有人不信任銀行，寧可放進保險箱。不過安徽省卻有農民異想天開，把人民幣200萬元（約台幣855萬元）放進櫃子再埋進土裡！多年過去，當他們把錢從土裡翻出來時整個傻眼，一捆一捆的鈔票已經變成「泥塊」，甚至一碰就碎！
+
+                    據《淮北新聞網》報導，濉溪縣韓村一名女子，日前捧著5綑鈔票到中國農業銀行求救，行長李繼中說：「像泥塊一樣，有的都發霉了，有的還濕漉漉的。」但女子竟說家中還有數十捆這樣又髒又脆弱、似乎一碰就會碎光光的鈔票。</p>
+            </div>
+            <div v-else-if="link === 'c'" class="tab-pane" v-bind:class="{'active': link==='c'}">
+                <p>大陸河南居然發生「抱錯兒子」的事件，讓2個年輕人從此交換人生的劇情，據《澎湃新聞》報導，在新冠肺炎疫情期間，一位蔣姓母親因兒子罹患肝癌，決定「捐肝救子」時，卻發現母子無血緣關係，踏上了跨越500公里的尋親之旅。
+
+                    據報導，這位母親1992年6月15日，在河南開封醫專第二附屬醫院產下一子，婦人3天後將兒子帶回江西九江生活；經過28年，兒子大學畢業、結婚生子，甚至在自行創業，還置產奉養父母。</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
+<script>
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            link: 'a',
+        }
+    })
+
+
+</script>
+</body>
+</html>
